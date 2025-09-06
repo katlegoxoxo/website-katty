@@ -87,13 +87,14 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 ];
 
 export const EDUCATION: EducationItem[] = [
-    { 
-        degree: 'Diploma in Software Development', 
-        institution: 'IIE Rosebank College', 
-        dateRange: '2022-2024',
-        certificateUrl: '/assets/Software_Development_Diploma.pdf'
-    }
+  { 
+    degree: 'Diploma in Software Development', 
+    institution: 'IIE Rosebank College', 
+    dateRange: '2022-2024',
+    certificateUrl: `${import.meta.env.BASE_URL}files/Qualification.pdf`
+  }
 ];
+
 
 export const CERTIFICATIONS: Certification[] = [
     { name: 'Introduction to Generative AI', imageUrl: 'https://picsum.photos/seed/genai/100/100', verifyUrl: 'https://www.cloudskillsboost.google/public_profiles/28ea05c6-984f-4824-9941-2e9a745a386e/badges/8636638' },
