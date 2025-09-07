@@ -30,6 +30,9 @@ export interface EducationItem {
 
 export interface Certification {
   name: string;
+  issuer: string;
+  date: string;
   imageUrl: string;
   verifyUrl: string;
+  isBadge?: boolean;
 }
