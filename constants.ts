@@ -26,6 +26,7 @@ export const PROJECTS: Project[] = [
     technologies: ['Gemini API', 'React', 'D3.js', 'Chart.js'],
     githubUrl: 'https://github.com/Jozi-Navigators/Sentiment-Analysis-Dashboard.git',
     imageUrl: `${import.meta.env.BASE_URL}images/SentimentAnalysisDashboard.png`,
+    demoComponent: 'sentimentAnalysis',
   },
   {
     name: 'School Buddy Learning System',
@@ -49,7 +50,8 @@ export const PROJECTS: Project[] = [
     description: 'Created an AI-powered image generation app using modern JS and APIs for creative automation.',
     technologies: ['HTML', 'JavaScript', 'APIs'],
     githubUrl: 'https://github.com/katlegoxoxo/image-gen-xo.git',
-     imageUrl: `${import.meta.env.BASE_URL}images/slatt.png`,
+    imageUrl: `${import.meta.env.BASE_URL}images/slatt.png`,
+    demoComponent: 'imageGeneration',
   },
   {
     name: 'AI Fundamentals Chatbot',
@@ -87,9 +89,9 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 ];
 
 export const EDUCATION: EducationItem[] = [
-  { 
-    degree: 'Diploma in Software Development', 
-    institution: 'IIE Rosebank College', 
+  {
+    degree: 'Diploma in Software Development',
+    institution: 'IIE Rosebank College',
     dateRange: '2022-2024',
     certificateUrl: `${import.meta.env.BASE_URL}files/Qualification.pdf`
   }
@@ -97,7 +99,19 @@ export const EDUCATION: EducationItem[] = [
 
 
 export const CERTIFICATIONS: Certification[] = [
-    { name: 'Introduction to Generative AI', imageUrl: 'https://picsum.photos/seed/genai/100/100', verifyUrl: 'https://www.cloudskillsboost.google/public_profiles/28ea05c6-984f-4824-9941-2e9a745a386e/badges/8636638' },
-    { name: 'Innovating with Google Cloud AI', imageUrl: 'https://picsum.photos/seed/gcai/100/100', verifyUrl: '#' },
-    { name: 'Java & Python Certificates', imageUrl: 'https://picsum.photos/seed/javacert/100/100', verifyUrl: '#' },
+  { name: 'Generative AI with Large Language Models', issuer: 'AWS & DeepLearning.AI', date: 'Aug 22, 2025', imageUrl: '/assets/certs/aws-gen-ai-llm.png', verifyUrl: 'https://coursera.org/verify/2SRX3MZ2EAC2' },
+  { name: 'Python for Data Science, AI & Development', issuer: 'IBM', date: 'Aug 21, 2025', imageUrl: `${import.meta.env.BASE_URL}files/GenerativeAIwithLargeLanguageModelsCoursera.pdf`, verifyUrl: 'https://coursera.org/verify/BLRPVE4Q019H' },
+  { name: 'AI Foundations: Prompt Engineering with ChatGPT', issuer: 'Arizona State University', date: 'Aug 11, 2025', imageUrl: '/assets/certs/asu-prompt-engineering.png', verifyUrl: 'https://coursera.org/verify/B5QFU48UJRPD' },
+  { name: 'Artificial Intelligence on Microsoft Azure', issuer: 'Microsoft', date: 'Aug 7, 2025', imageUrl: '/assets/certs/microsoft-ai-azure.png', verifyUrl: 'https://coursera.org/verify/6QBSFJ4RZD9P' },
+  { name: 'Introduction to Artificial Intelligent', issuer: 'Capaciti', date: 'Aug 7, 2025', imageUrl: '/assets/certs/capaciti-intro-ai.png', verifyUrl: '#' },
+  { name: 'Introduction to Responsible AI', issuer: 'Google Cloud', date: 'Aug 1, 2025', imageUrl: '/assets/certs/google-responsible-ai.png', verifyUrl: 'https://coursera.org/verify/A36BDVJ507MK' },
+  { name: 'AI For Everyone', issuer: 'DeepLearning.AI', date: 'Jul 31, 2025', imageUrl: '/assets/certs/deeplearning-ai-for-everyone.png', verifyUrl: 'https://coursera.org/verify/2AOOUG9QY4YY' },
+  { name: 'Introduction to Artificial Intelligence (AI)', issuer: 'IBM', date: 'Jul 31, 2025', imageUrl: '/assets/certs/ibm-intro-ai.png', verifyUrl: 'https://coursera.org/verify/W5GIHZV1991C' },
+  { name: 'Introduction to Generative AI', issuer: 'Google Cloud', date: 'Jul 30, 2025', imageUrl: '/assets/certs/google-intro-gen-ai.png', verifyUrl: 'https://coursera.org/verify/VUY4MQ7JEG3Q' },
+  { name: 'AI Essentials', issuer: 'Intel', date: 'Jul 30, 2025', imageUrl: '/assets/certs/intel-ai-essentials.png', verifyUrl: 'https://coursera.org/verify/4RNQ5TI5HC4Y' },
+];
+
+export const BADGES: Certification[] = [
+    { name: 'Python for Data Science and AI', issuer: 'IBM', date: '', imageUrl: '/assets/certs/badge-python-ds-ai.png', verifyUrl: '#', isBadge: true },
+    { name: 'Artificial Intelligence Essentials V2', issuer: 'IBM', date: '', imageUrl: '/assets/certs/badge-ai-essentials.png', verifyUrl: '#', isBadge: true },
 ];
