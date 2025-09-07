@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import type { Project } from '../types';
+import SentimentAnalysisDemo from './SentimentAnalysisDemo';
+import ImageGenDemo from './ImageGenDemo';
 
 interface ModalProps {
   project: Project;
@@ -44,6 +46,14 @@ const Modal: React.FC<ModalProps> = ({ project, onClose }) => {
             </div>
             
             <p className="text-slate-300 mb-6">{project.description}</p>
+
+            {project.demoComponent && (
+              <div className="my-6 border-y border-white/10 py-6">
+                <h3 className="font-semibold text-cyan-400 mb-4 text-lg"><i className="fas fa-flask mr-2"></i>Live Demo</h3>
+                {project.demoComponent === 'sentimentAnalysis' && <SentimentAnalysisDemo />}
+                {project.demoComponent === 'imageGeneration' && <ImageGenDemo />}
+              </div>
+            )}
             
             <h3 className="font-semibold text-slate-200 mb-2">Technologies Used:</h3>
             <div className="flex flex-wrap gap-2 mb-6">
