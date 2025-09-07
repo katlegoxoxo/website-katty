@@ -7,6 +7,7 @@ export interface Project {
   githubUrl: string;
   liveUrl?: string;
   imageUrl?: string;
+  demoComponent?: 'sentimentAnalysis' | 'imageGeneration';
 }
 
 export interface Skill {
