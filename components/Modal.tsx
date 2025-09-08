@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import type { Project } from '../types';
 import SentimentAnalysisDemo from './SentimentAnalysisDemo';
 import ImageGenDemo from './ImageGenDemo';
+import ResumeBuilderDemo from './ResumeBuilderDemo';
 
 interface ModalProps {
   project: Project;
@@ -56,6 +57,7 @@ const Modal: React.FC<ModalProps> = ({ project, onClose }) => {
                   <h3 className="font-semibold text-cyan-400 mb-4 text-lg"><i className="fas fa-flask mr-2"></i>Live Demo</h3>
                   {project.demoComponent === 'sentimentAnalysis' && <SentimentAnalysisDemo />}
                   {project.demoComponent === 'imageGeneration' && <ImageGenDemo />}
+                  {project.demoComponent === 'resumeBuilder' && <ResumeBuilderDemo />}
                 </div>
               )}
               
