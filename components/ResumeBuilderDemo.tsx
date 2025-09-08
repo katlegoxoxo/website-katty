@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 import { GoogleGenAI, Type } from '@google/genai';
 import { motion, AnimatePresence } from 'framer-motion';
 
-interface ResumeResult {
-    bulletPoints: string[];
+interface SummaryResult {
+    summary: string;
 }
 
 const ResumeBuilderDemo: React.FC = () => {
-    const [jobTitle, setJobTitle] = useState('Frontend Developer');
+    const [userSkills, setUserSkills] = useState('React, TypeScript, Gemini API, Node.js, REST APIs, Agile methodologies, UI/UX Design');
     const [jobDescription, setJobDescription] = useState('Seeking a skilled Frontend Developer with 3+ years of experience in React and TypeScript. Responsibilities include building responsive user interfaces, collaborating with backend teams, and integrating with RESTful APIs. Experience with state management libraries like Redux and modern CSS frameworks like Tailwind is a plus.');
-    const [result, setResult] = useState<ResumeResult | null>(null);
+    const [result, setResult] = useState<SummaryResult | null>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
     const handleGenerate = async () => {
-        if (!jobTitle || !jobDescription) {
-            setError('Please fill in both job title and the job description.');
+        if (!userSkills || !jobDescription) {
+            setError('Please fill in both your skills and the job description.');
             return;
         }
         setIsLoading(true);
@@ -26,19 +26,18 @@ const ResumeBuilderDemo: React.FC = () => {
             const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
             const response = await ai.models.generateContent({
                 model: 'gemini-2.5-flash',
-                contents: `Act as a professional resume writer. Create exactly 3 impactful, concise, and quantifiable resume bullet points for a candidate applying for the job title "${jobTitle}". The bullet points should highlight skills and experiences that align with the following job description: "${jobDescription}". Focus on action verbs and tangible outcomes.`,
+                contents: `Act as a professional career coach. Write a compelling, 2-3 sentence professional summary for a resume. The summary should be tailored to the following job description and highlight the candidate's key skills provided. Job Description: "${jobDescription}". Candidate's Skills: "${userSkills}".`,
                 config: {
                     responseMimeType: 'application/json',
                     responseSchema: {
                         type: Type.OBJECT,
                         properties: {
-                            bulletPoints: {
-                                type: Type.ARRAY,
-                                items: { type: Type.STRING },
-                                description: 'An array of 3 professional resume bullet points.'
+                            summary: {
+                                type: Type.STRING,
+                                description: 'A 2-3 sentence professional summary for a resume.'
                             }
                         },
-                        required: ['bulletPoints']
+                        required: ['summary']
                     },
                 },
             });
@@ -48,7 +47,7 @@ const ResumeBuilderDemo: React.FC = () => {
 
         } catch (e) {
             console.error(e);
-            setError('Failed to generate bullet points. The AI may be unavailable.');
+            setError('Failed to generate summary. The AI may be unavailable.');
         } finally {
             setIsLoading(false);
         }
@@ -56,17 +55,17 @@ const ResumeBuilderDemo: React.FC = () => {
 
     return (
         <div className="space-y-4">
-            <p className="text-sm text-slate-400">Provide a job title and description to see the AI generate professional resume bullet points.</p>
+            <p className="text-sm text-slate-400">Provide your skills and a job description to see the AI generate a tailored professional summary for your resume.</p>
             <div className="space-y-4">
                 <div>
-                    <label htmlFor="jobTitle" className="block text-xs font-medium text-slate-300 mb-1">Job Title</label>
-                    <input
-                        id="jobTitle"
-                        type="text"
-                        value={jobTitle}
-                        onChange={(e) => setJobTitle(e.target.value)}
+                    <label htmlFor="userSkills" className="block text-xs font-medium text-slate-300 mb-1">Your Skills</label>
+                    <textarea
+                        id="userSkills"
+                        rows={3}
+                        value={userSkills}
+                        onChange={(e) => setUserSkills(e.target.value)}
                         className="w-full bg-slate-900/70 p-2 rounded-md border border-white/10 focus:ring-2 focus:ring-cyan-400 focus:outline-none transition-shadow"
-                        placeholder="e.g., Software Engineer"
+                        placeholder="e.g., React, TypeScript, Node.js"
                     />
                 </div>
                 <div>
@@ -89,7 +88,7 @@ const ResumeBuilderDemo: React.FC = () => {
                 {isLoading ? (
                     <><i className="fas fa-spinner fa-spin"></i> Generating...</>
                 ) : (
-                    <><i className="fas fa-magic"></i> Generate Bullet Points</>
+                    <><i className="fas fa-magic"></i> Generate Summary</>
                 )}
             </button>
             {error && <p className="text-sm text-center text-red-400">{error}</p>}
@@ -102,19 +101,15 @@ const ResumeBuilderDemo: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0 }}
                 >
-                    <h4 className="font-semibold text-slate-200 mb-3">Generated Bullet Points:</h4>
-                    <ul className="space-y-2 list-disc list-inside text-slate-300">
-                        {result.bulletPoints.map((point, index) => (
-                            <motion.li 
-                                key={index}
-                                initial={{ opacity: 0, x: -10 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: index * 0.1 }}
-                            >
-                                {point}
-                            </motion.li>
-                        ))}
-                    </ul>
+                    <h4 className="font-semibold text-slate-200 mb-2">Generated Professional Summary:</h4>
+                    <motion.p
+                        className="text-slate-300"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.1 }}
+                    >
+                        {result.summary}
+                    </motion.p>
                 </motion.div>
             )}
             </AnimatePresence>
