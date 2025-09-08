@@ -1,18 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Section from './Section';
 import { EDUCATION } from '../constants';
-import { AnimatePresence } from 'framer-motion';
 import type { EducationItem } from '../types';
-import CertificateModal from './CertificateModal';
 
 interface EducationProps {
   id: string;
   title: string;
+  onCertificateSelect: (item: EducationItem) => void;
 }
 
-const Education: React.FC<EducationProps> = ({ id, title }) => {
-  const [selectedCertificate, setSelectedCertificate] = useState<EducationItem | null>(null);
-
+const Education: React.FC<EducationProps> = ({ id, title, onCertificateSelect }) => {
   return (
     <Section id={id} title={title}>
       <div className="bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-8">
@@ -21,7 +18,7 @@ const Education: React.FC<EducationProps> = ({ id, title }) => {
             <li
               key={item.degree}
               className={` ${item.certificateUrl ? 'cursor-pointer group transition-all duration-300 hover:bg-white/5 rounded-lg' : ''}`}
-              onClick={() => item.certificateUrl && setSelectedCertificate(item)}
+              onClick={() => item.certificateUrl && onCertificateSelect(item)}
             >
               <div className="p-4">
                 <div className="flex justify-between items-baseline">
@@ -39,11 +36,6 @@ const Education: React.FC<EducationProps> = ({ id, title }) => {
           ))}
         </ul>
       </div>
-      <AnimatePresence>
-        {selectedCertificate && (
-          <CertificateModal item={selectedCertificate} onClose={() => setSelectedCertificate(null)} />
-        )}
-      </AnimatePresence>
     </Section>
   );
 };

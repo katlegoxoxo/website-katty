@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Section from './Section';
 import { PROJECTS } from '../constants';
-import { motion, Variants, AnimatePresence } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import type { Project } from '../types';
-import Modal from './Modal';
 
 interface ProjectsProps {
   id: string;
   title: string;
+  onProjectSelect: (project: Project) => void;
 }
 
 const containerVariants: Variants = {
@@ -25,9 +25,7 @@ const itemVariants: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-const Projects: React.FC<ProjectsProps> = ({ id, title }) => {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-
+const Projects: React.FC<ProjectsProps> = ({ id, title, onProjectSelect }) => {
   return (
     <Section id={id} title={title}>
       <motion.div
@@ -37,14 +35,14 @@ const Projects: React.FC<ProjectsProps> = ({ id, title }) => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
       >
-        {PROJECTS.map((project, index) => (
+        {PROJECTS.map((project) => (
           <motion.div
             key={project.name}
             layoutId={`card-${project.name}`}
             variants={itemVariants}
-            onClick={() => setSelectedProject(project)}
+            onClick={() => onProjectSelect(project)}
             className="bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col group cursor-pointer"
-            whileHover={{ y: -8, scale: 1.03, transition: { duration: 0.2 } }}
+            whileHover={{ y: -10, scale: 1.05, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
           >
             <div className="flex justify-between items-start mb-3">
               <h3 className="font-bold text-slate-200 group-hover:text-cyan-400 transition-colors">{project.name}</h3>
@@ -66,12 +64,6 @@ const Projects: React.FC<ProjectsProps> = ({ id, title }) => {
           </motion.div>
         ))}
       </motion.div>
-
-      <AnimatePresence>
-        {selectedProject && (
-          <Modal project={selectedProject} onClose={() => setSelectedProject(null)} />
-        )}
-      </AnimatePresence>
     </Section>
   );
 };
