@@ -18,6 +18,7 @@ export const PROJECTS: Project[] = [
     technologies: ['Gemini API', 'React', 'Node.js', 'TypeScript'],
     githubUrl: 'https://github.com/katlegoxoxo/ai-resume-builder.git',
     imageUrl: `${import.meta.env.BASE_URL}images/ai-resume-builder.png`,
+    demoComponent: 'resumeBuilder',
   },
   {
     name: 'Sentiment Analysis Dashboard',
