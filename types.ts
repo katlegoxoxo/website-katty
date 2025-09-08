@@ -1,4 +1,3 @@
-
 export interface Project {
   name: string;
   date: string;
@@ -7,7 +6,7 @@ export interface Project {
   githubUrl: string;
   liveUrl?: string;
   imageUrl?: string;
-  demoComponent?: 'sentimentAnalysis' | 'imageGeneration';
+  demoComponent?: 'sentimentAnalysis' | 'imageGeneration' | 'resumeBuilder';
 }
 
 export interface Skill {
