@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
+import Magnetic from './Magnetic';
+
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -33,22 +35,31 @@ const Hero: React.FC = () => {
             IT graduate with hands-on experience building web & mobile solutions. I bridge product needs and technical execution — clean UI/UX, data-aware logic, and deployable code.
           </motion.p>
           <motion.div variants={itemVariants} className="flex flex-wrap justify-center md:justify-start items-center gap-4 mb-4">
-            <a
-              href={`${import.meta.env.BASE_URL}files/KatlegoMaketeAspiringSoftwareEngineer.pdf`}
-              download
-              className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold py-2 px-5 rounded-md transition-colors flex items-center gap-2"
-            >
-              Download CV <i className="fas fa-download"></i>
-            </a>
-
-            <a href="https://github.com/katlegoxoxo" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 text-slate-200 font-bold py-2 px-5 rounded-md transition-colors flex items-center gap-2">
-              <i className="fab fa-github"></i> GitHub
-            </a>
+            <Magnetic>
+              <a
+                href={`${import.meta.env.BASE_URL}files/KatlegoMaketeAspiringSoftwareEngineer.pdf`}
+                download
+                className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold py-2 px-5 rounded-md transition-colors flex items-center gap-2"
+              >
+                Download CV <i className="fas fa-download"></i>
+              </a>
+            </Magnetic>
+            <Magnetic>
+              <a href="https://github.com/katlegoxoxo" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 text-slate-200 font-bold py-2 px-5 rounded-md transition-colors flex items-center gap-2">
+                <i className="fab fa-github"></i> GitHub
+              </a>
+            </Magnetic>
           </motion.div>
           <motion.div variants={itemVariants} className="flex justify-center md:justify-start items-center gap-4 text-slate-400 text-2xl">
-            <a href="https://www.linkedin.com/in/katlego-shaun-makete-72225a250/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors" title="LinkedIn"><i className="fab fa-linkedin"></i></a>
-            <a href="mailto:katlegomakete18@gmail.com" className="hover:text-cyan-400 transition-colors" title="Email"><i className="fas fa-envelope"></i></a>
-            <a href="tel:+27695126439" className="hover:text-cyan-400 transition-colors" title="Phone"><i className="fas fa-phone"></i></a>
+            <Magnetic>
+              <a href="https://www.linkedin.com/in/katlego-shaun-makete-72225a250/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors" title="LinkedIn"><i className="fab fa-linkedin"></i></a>
+            </Magnetic>
+            <Magnetic>
+              <a href="mailto:katlegomakete18@gmail.com" className="hover:text-cyan-400 transition-colors" title="Email"><i className="fas fa-envelope"></i></a>
+            </Magnetic>
+            <Magnetic>
+              <a href="tel:+27695126439" className="hover:text-cyan-400 transition-colors" title="Phone"><i className="fas fa-phone"></i></a>
+            </Magnetic>
           </motion.div>
           <motion.p variants={itemVariants} className="text-xs text-slate-500 mt-6">Based in Johannesburg, South Africa.</motion.p>
         </motion.div>
