@@ -13,7 +13,7 @@ export const NAV_LINKS = [
 export const PROJECTS: Project[] = [
   {
     name: 'AI Resume Builder',
-    date: '10/2025',
+    date: '08/2025',
     description: 'An intelligent resume generation system that creates customized, ATS-friendly resumes based on user inputs and job descriptions, leveraging AI to highlight key skills and experiences.',
     technologies: ['Gemini API', 'React', 'Node.js', 'TypeScript'],
     githubUrl: 'https://github.com/katlegoxoxo/ai-resume-builder.git',
@@ -30,7 +30,7 @@ export const PROJECTS: Project[] = [
   },
   {
     name: 'AI School Buddy ',
-    date: '06/2025',
+    date: '09/2025',
     description: 'A collaborative learning platform for students, featuring subject-specific chat rooms, resource sharing, and a peer-to-peer tutoring scheduler to enhance academic support and engagement.',
     technologies: ['React', 'Firebase', 'Real-time Chat', 'UI/UX'],
     githubUrl: 'https://github.com/katlegoxoxo',
