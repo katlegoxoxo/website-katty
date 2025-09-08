@@ -29,12 +29,12 @@ export const PROJECTS: Project[] = [
     demoComponent: 'sentimentAnalysis',
   },
   {
-    name: 'School Buddy Learning System',
+    name: 'AI School Buddy ',
     date: '06/2025',
     description: 'A collaborative learning platform for students, featuring subject-specific chat rooms, resource sharing, and a peer-to-peer tutoring scheduler to enhance academic support and engagement.',
     technologies: ['React', 'Firebase', 'Real-time Chat', 'UI/UX'],
     githubUrl: 'https://github.com/katlegoxoxo',
-    imageUrl: 'https://picsum.photos/seed/school-buddy/800/600',
+    imageUrl: `${import.meta.env.BASE_URL}images/AILearning.png`,
   },
   {
     name: 'Juta Medical & Dental Centre',
@@ -112,6 +112,6 @@ export const CERTIFICATIONS: Certification[] = [
 ];
 
 export const BADGES: Certification[] = [
-    { name: 'Python for Data Science and AI', issuer: 'IBM', date: '', imageUrl: '/assets/certs/badge-python-ds-ai.png', verifyUrl: '#', isBadge: true },
-    { name: 'Artificial Intelligence Essentials V2', issuer: 'IBM', date: '', imageUrl: '/assets/certs/badge-ai-essentials.png', verifyUrl: '#', isBadge: true },
+  { name: 'Python for Data Science and AI', issuer: 'IBM', date: '', imageUrl: '/assets/certs/badge-python-ds-ai.png', verifyUrl: '#', isBadge: true },
+  { name: 'Artificial Intelligence Essentials V2', issuer: 'IBM', date: '', imageUrl: '/assets/certs/badge-ai-essentials.png', verifyUrl: '#', isBadge: true },
 ];
