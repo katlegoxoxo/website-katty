@@ -7,9 +7,11 @@ import { motion, AnimatePresence, Variants } from 'framer-motion';
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
+      // Active section logic
       const sections = NAV_LINKS.map(link => document.getElementById(link.id));
       const scrollPosition = window.scrollY + 100;
 
@@ -19,8 +21,15 @@ const Header: React.FC = () => {
           break;
         }
       }
+      
+      // Scrolled state for transparent navbar
+      setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Run on mount to set initial state based on scroll position (e.g., on refresh)
+    handleScroll();
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -64,8 +73,10 @@ const Header: React.FC = () => {
     },
   };
 
+  const showBackground = isScrolled || isOpen;
+
   return (
-    <header className="sticky top-0 z-50 h-20 backdrop-blur-lg bg-slate-900/40 border-b border-white/5">
+    <header className={`sticky top-0 z-50 h-20 transition-all duration-300 ease-in-out ${showBackground ? 'backdrop-blur-lg bg-slate-900/60 border-b border-white/5 shadow-lg shadow-black/20' : 'border-b border-transparent'}`}>
       <div className="mx-auto max-w-6xl px-6 h-full flex justify-between items-center">
         <a href="#home" className="font-mono text-cyan-400 font-bold tracking-wide">
           KATLEGO MAKETE

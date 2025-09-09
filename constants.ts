@@ -10,6 +10,23 @@ export const NAV_LINKS = [
   { name: 'Contact', id: 'contact' },
 ];
 
+export const TECH_STACK: { name: string; icon: string }[] = [
+    { name: 'Java', icon: 'fab fa-java' },
+    { name: 'C#', icon: 'fas fa-code' },
+    { name: 'Python', icon: 'fab fa-python' },
+    { name: 'React', icon: 'fab fa-react' },
+    { name: 'TypeScript', icon: 'fas fa-code' },
+    { name: 'HTML5', icon: 'fab fa-html5' },
+    { name: 'CSS3', icon: 'fab fa-css3-alt' },
+    { name: 'SQL', icon: 'fas fa-database' },
+    { name: 'Git', icon: 'fab fa-git-alt' },
+    { name: 'GitHub', icon: 'fab fa-github' },
+    { name: 'Android Studio', icon: 'fab fa-android' },
+    { name: 'Firebase', icon: 'fas fa-fire' },
+    { name: 'Node.js', icon: 'fab fa-node-js' },
+    { name: 'Google Cloud', icon: 'fab fa-google' },
+];
+
 export const PROJECTS: Project[] = [
   {
     name: 'AI Resume Builder',
@@ -65,17 +82,7 @@ export const PROJECTS: Project[] = [
 ];
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
-  {
-    title: 'Programming & Data',
-    skills: [
-      { name: 'Java', icon: 'fab fa-java', description: 'Leveraged Java for core coursework, focusing on object-oriented principles, data structures, and algorithms. Built console-based applications and have a foundational understanding of its use in backend systems.' },
-      { name: 'C#', icon: 'fas fa-code', description: 'Developed applications using C# and the .NET framework. My experience includes building robust logic and understanding its application in enterprise-level software.' },
-      { name: 'Python (basic)', icon: 'fab fa-python', description: 'Used Python for introductory data analysis and scripting tasks. Familiar with its clean syntax and powerful libraries for quick prototyping and automation.' },
-      { name: 'SQL', icon: 'fas fa-database', description: 'Proficient in writing SQL queries for data retrieval, manipulation, and management in relational databases. Experienced in designing simple database schemas and ensuring data integrity.' },
-      { name: 'HTML & CSS', icon: 'fab fa-html5', description: 'Built responsive and semantic front-end layouts for web and mobile applications. Focused on creating clean, user-friendly interfaces that are accessible and cross-browser compatible.' },
-      { name: 'TypeScript', icon: 'fas fa-code', description: 'Utilized TypeScript to bring static typing to JavaScript projects, improving code quality, maintainability, and developer experience by catching errors early in the development process.' },
-    ],
-  },
+
   {
     title: 'Tools & Cloud',
     skills: [

@@ -14,11 +14,10 @@ const ParticleCanvas: React.FC = () => {
     
     const options = {
       staticStarCount: 800,
-      shootingStarCount: 3,
+      shootingStarCount: 0,
       starColor: "rgba(255, 255, 255, 0.8)",
       maxStaticStarSize: 1.5,
       shootingStarBaseSpeed: 10,
-      mouseRadius: 200, // Radius for mouse interaction
     };
 
     canvas.width = window.innerWidth;
@@ -26,11 +25,6 @@ const ParticleCanvas: React.FC = () => {
     
     let scrollVelocity = 0;
     let lastScrollY = window.scrollY;
-    
-    const mouse = {
-        x: -options.mouseRadius,
-        y: -options.mouseRadius,
-    };
 
     class StaticStar {
       x: number;
@@ -41,8 +35,6 @@ const ParticleCanvas: React.FC = () => {
       twinkleSpeed: number;
       minAlpha: number;
       maxAlpha: number;
-      vx: number; // Velocity x for mouse interaction
-      vy: number; // Velocity y for mouse interaction
 
       constructor() {
         this.x = Math.random() * canvas.width;
@@ -53,32 +45,13 @@ const ParticleCanvas: React.FC = () => {
         this.maxAlpha = Math.random() * 0.4 + 0.5;
         this.alpha = (Math.random() * (this.maxAlpha - this.minAlpha) + this.minAlpha) * this.z;
         this.twinkleSpeed = Math.random() * 0.012 + 0.003;
-        this.vx = 0;
-        this.vy = 0;
       }
 
       update(velocity: number) {
         // Scroll parallax
         this.y -= velocity * this.z;
 
-        // Mouse repulsion
-        const dx = this.x - mouse.x;
-        const dy = this.y - mouse.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < options.mouseRadius) {
-            const force = (options.mouseRadius - dist) / options.mouseRadius;
-            this.vx += (dx / dist) * force * 0.25;
-            this.vy += (dy / dist) * force * 0.25;
-        }
-
-        // Apply friction and update position
-        this.vx *= 0.95;
-        this.vy *= 0.95;
-        this.x += this.vx;
-        this.y += this.vy;
-
-        // Screen wrapping
+        // Screen wrapping for y-axis
         if (this.y < -this.radius) {
             this.y = canvas.height + this.radius;
             this.x = Math.random() * canvas.width;
@@ -86,9 +59,10 @@ const ParticleCanvas: React.FC = () => {
             this.y = -this.radius;
             this.x = Math.random() * canvas.width;
         }
+        
+        // Screen wrapping for x-axis (in case of resize)
         if (this.x < -this.radius) { this.x = canvas.width + this.radius; }
         if (this.x > canvas.width + this.radius) { this.x = -this.radius; }
-
       }
 
       draw(velocity: number) {
@@ -201,7 +175,7 @@ const ParticleCanvas: React.FC = () => {
           star.update();
           star.draw();
       });
-      
+
       animationFrameId = requestAnimationFrame(animate);
     };
 
@@ -217,30 +191,16 @@ const ParticleCanvas: React.FC = () => {
         scrollVelocity += (currentScrollY - lastScrollY) * 0.02;
         lastScrollY = currentScrollY;
     }
-
-    const handleMouseMove = (e: MouseEvent) => {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
-    }
-
-    const handleMouseLeave = () => {
-        mouse.x = -options.mouseRadius;
-        mouse.y = -options.mouseRadius;
-    }
     
     createStars();
     animate();
 
     window.addEventListener('resize', handleResize);
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mouseleave', handleMouseLeave);
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseleave', handleMouseLeave);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
