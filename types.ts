@@ -1,7 +1,14 @@
+export interface ProjectDetail {
+  title: string;
+  content: string;
+  icon: string;
+}
+
 export interface Project {
   name: string;
   date: string;
   description: string;
+  detailedDescription: ProjectDetail[];
   technologies: string[];
   githubUrl: string;
   liveUrl?: string;
@@ -28,7 +35,7 @@ export interface EducationItem {
 }
 
 export interface Certification {
-  name: string;
+  name:string;
   issuer: string;
   date: string;
   imageUrl: string;

@@ -52,6 +52,28 @@ const Modal: React.FC<ModalProps> = ({ project, onClose }) => {
               
               <p className="text-slate-300 mb-6">{project.description}</p>
 
+              {project.detailedDescription && project.detailedDescription.length > 0 && (
+                <div className="mb-6 space-y-6 border-t border-white/10 pt-6">
+                  {project.detailedDescription.map((detail, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.2 + index * 0.1 }}
+                      className="space-y-2"
+                    >
+                      <h4 className="font-semibold text-slate-200 flex items-center gap-3">
+                        <i className={`${detail.icon} text-cyan-400 w-5 text-center`}></i>
+                        <span>{detail.title}</span>
+                      </h4>
+                      <p className="text-slate-400 text-sm leading-relaxed pl-8">
+                        {detail.content}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+              )}
+
               {project.demoComponent && (
                 <div className="my-6 border-y border-white/10 py-6">
                   <h3 className="font-semibold text-cyan-400 mb-4 text-lg"><i className="fas fa-flask mr-2"></i>Live Demo</h3>
