@@ -112,27 +112,37 @@ const Skills: React.FC<SkillsProps> = ({ id, title }) => {
       </motion.div>
       
       {/* Tech Stack Grid Section */}
-      <motion.div
-        className="mt-16"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-        viewport={{ once: true, amount: 0.5 }}
-      >
-        <h3 className="font-mono text-cyan-400/80 font-bold text-xl mb-8 text-center">My Tech Stack</h3>
-        <p className="text-center text-slate-400 mb-12 max-w-2xl mx-auto -mt-6">
+      <div className="mt-16">
+        <motion.h3 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.8 }}
+            transition={{ duration: 0.5 }}
+            className="font-mono text-cyan-400/80 font-bold text-xl mb-8 text-center"
+        >
+            My Tech Stack
+        </motion.h3>
+        <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.8 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-center text-slate-400 mb-12 max-w-2xl mx-auto -mt-6"
+        >
           A collection of the primary languages, frameworks, and tools I use to bring ideas to life.
-        </p>
+        </motion.p>
         <div className="space-y-12">
           {TECH_STACK_CATEGORIES.map((category) => (
-            <motion.div 
-              key={category.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.5 }}
-            >
-              <h4 className="font-semibold text-slate-300 text-lg mb-6 text-center">{category.title}</h4>
+            <div key={category.title}>
+              <motion.h4
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.8 }}
+                transition={{ duration: 0.5 }}
+                className="font-semibold text-slate-300 text-lg mb-6 text-center"
+              >
+                {category.title}
+              </motion.h4>
               <motion.div
                 className="flex flex-wrap justify-center gap-4 sm:gap-6"
                 variants={techStackContainerVariants}
@@ -158,10 +168,10 @@ const Skills: React.FC<SkillsProps> = ({ id, title }) => {
                   </motion.div>
                 ))}
               </motion.div>
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </Section>
   );
 };
