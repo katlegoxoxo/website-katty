@@ -1,4 +1,4 @@
-import type { Project, SkillCategory, EducationItem, Certification, Experience } from './types';
+import type { Project, SkillCategory, EducationItem, Certification, Experience, TechStackCategory } from './types';
 
 export const NAV_LINKS = [
   { name: 'Home', id: 'home' },
@@ -11,22 +11,44 @@ export const NAV_LINKS = [
   { name: 'Contact', id: 'contact' },
 ];
 
-export const TECH_STACK: { name: string; icon: string }[] = [
-    { name: 'Java', icon: 'fab fa-java' },
-    { name: 'C#', icon: 'fas fa-code' },
-    { name: 'Python', icon: 'fab fa-python' },
-    { name: 'React', icon: 'fab fa-react' },
-    { name: 'TypeScript', icon: 'fas fa-code' },
-    { name: 'HTML5', icon: 'fab fa-html5' },
-    { name: 'CSS3', icon: 'fab fa-css3-alt' },
-    { name: 'SQL', icon: 'fas fa-database' },
-    { name: 'Git', icon: 'fab fa-git-alt' },
-    { name: 'GitHub', icon: 'fab fa-github' },
-    { name: 'Android Studio', icon: 'fab fa-android' },
-    { name: 'Firebase', icon: 'fas fa-fire' },
-    { name: 'Node.js', icon: 'fab fa-node-js' },
-    { name: 'Google Cloud', icon: 'fab fa-google' },
+
+export const TECH_STACK_CATEGORIES: TechStackCategory[] = [
+  {
+    title: 'Frontend',
+    technologies: [
+      { name: 'React', icon: 'fab fa-react' },
+      { name: 'TypeScript', icon: 'fas fa-code' },
+      { name: 'HTML5', icon: 'fab fa-html5' },
+      { name: 'CSS3', icon: 'fab fa-css3-alt' },
+    ],
+  },
+  {
+    title: 'Backend & Databases',
+    technologies: [
+      { name: 'Node.js', icon: 'fab fa-node-js' },
+      { name: 'Firebase', icon: 'fas fa-fire' },
+      { name: 'SQL', icon: 'fas fa-database' },
+    ],
+  },
+  {
+    title: 'Languages',
+    technologies: [
+      { name: 'Java', icon: 'fab fa-java' },
+      { name: 'C#', icon: 'fas fa-code' },
+      { name: 'Python', icon: 'fab fa-python' },
+    ],
+  },
+  {
+    title: 'Tools & Platforms',
+    technologies: [
+      { name: 'Git', icon: 'fab fa-git-alt' },
+      { name: 'GitHub', icon: 'fab fa-github' },
+      { name: 'Android Studio', icon: 'fab fa-android' },
+      { name: 'Google Cloud', icon: 'fab fa-google' },
+    ],
+  },
 ];
+
 
 export const PROJECTS: Project[] = [
   {

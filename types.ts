@@ -27,6 +27,16 @@ export interface SkillCategory {
   skills: Skill[];
 }
 
+export interface TechStackItem {
+  name: string;
+  icon: string;
+}
+
+export interface TechStackCategory {
+  title: string;
+  technologies: TechStackItem[];
+}
+
 export interface EducationItem {
   degree: string;
   institution: string;
