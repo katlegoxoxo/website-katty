@@ -44,7 +44,7 @@ const letterVariants: Variants = {
 
 
 const Hero: React.FC = () => {
-  const name = "Katlego Makete";
+  const name = "Katlego  \u00A0 Makete";
 
   return (
     <section id="home" className="min-h-[calc(100vh-80px)] flex items-center py-20">
@@ -112,10 +112,11 @@ const Hero: React.FC = () => {
           />
           <div className="flex justify-between items-center mt-4 text-sm">
             <div>
-              <p className="font-bold">Software Developer</p>
-              <p className="text-slate-400 text-xs mt-1">Himonthy</p>
+              <p className="font-bold">Aspiring Software Developer</p>
+              <p className="text-slate-400 text-xs mt-1">Capaciti</p>
+              <p className="text-slate-400 text-xs mt-1"></p>
             </div>
-            <p className="font-mono text-slate-400 text-xs">Johannesburg</p>
+            <p className="font-mono text-slate-400 text-xs">Himonthy</p>
           </div>
         </motion.div>
       </div>
