@@ -91,7 +91,7 @@ const SentimentAnalysisDemo: React.FC = () => {
               rows={3}
               value={text}
               onChange={(e) => setText(e.target.value)}
-              className="w-full bg-slate-900/70 p-3 rounded-md border border-white/10 focus:ring-2 focus:ring-cyan-400 focus:outline-none transition-shadow"
+              className="w-full bg-zinc-950/70 p-3 rounded-md border border-white/10 focus:ring-2 focus:ring-cyan-400 focus:outline-none transition-shadow"
               placeholder="e.g., I love this portfolio!"
             />
             <button

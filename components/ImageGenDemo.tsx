@@ -48,7 +48,7 @@ const ImageGenDemo: React.FC = () => {
                     type="text"
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value)}
-                    className="flex-grow w-full bg-slate-900/70 p-2 rounded-md border border-white/10 focus:ring-2 focus:ring-cyan-400 focus:outline-none transition-shadow"
+                    className="flex-grow w-full bg-zinc-950/70 p-2 rounded-md border border-white/10 focus:ring-2 focus:ring-cyan-400 focus:outline-none transition-shadow"
                     placeholder="e.g., A robot holding a skateboard"
                 />
                 <button
@@ -65,7 +65,7 @@ const ImageGenDemo: React.FC = () => {
             </div>
             {error && <p className="text-sm text-center text-red-400">{error}</p>}
             
-            <div className="w-full h-64 bg-slate-900/70 rounded-lg flex items-center justify-center border border-white/10 overflow-hidden">
+            <div className="w-full h-64 bg-zinc-950/70 rounded-lg flex items-center justify-center border border-white/10 overflow-hidden">
                 {isLoading && (
                     <div className="text-center text-slate-400">
                         <i className="fas fa-spinner fa-spin text-3xl mb-2"></i>

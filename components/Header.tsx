@@ -76,7 +76,7 @@ const Header: React.FC = () => {
   const showBackground = isScrolled || isOpen;
 
   return (
-    <header className={`sticky top-0 z-50 h-20 transition-all duration-300 ease-in-out ${showBackground ? 'backdrop-blur-lg bg-slate-900/60 border-b border-white/5 shadow-lg shadow-black/20' : 'border-b border-transparent'}`}>
+    <header className={`sticky top-0 z-50 h-20 transition-all duration-300 ease-in-out ${showBackground ? 'backdrop-blur-lg bg-black/60 border-b border-white/5 shadow-lg shadow-black/20' : 'border-b border-transparent'}`}>
       <div className="mx-auto max-w-6xl px-6 h-full flex justify-between items-center">
         <a href="#home" className="font-mono text-cyan-400 font-bold tracking-wide">
           KATLEGO MAKETE
@@ -107,7 +107,7 @@ const Header: React.FC = () => {
             />
             <motion.div 
               key="menu"
-              className="md:hidden absolute top-full left-0 w-full bg-slate-900 border-b border-white/10 shadow-lg z-40"
+              className="md:hidden absolute top-full left-0 w-full bg-black border-b border-white/10 shadow-lg z-40"
               variants={menuVariants}
               initial="hidden"
               animate="visible"

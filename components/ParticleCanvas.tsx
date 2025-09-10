@@ -161,7 +161,7 @@ const ParticleCanvas: React.FC = () => {
     }
     
     const animate = () => {
-      ctx.fillStyle = '#0d1117';
+      ctx.fillStyle = '#000000';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       scrollVelocity *= 0.95; // Apply friction to the scroll velocity

@@ -113,7 +113,7 @@ const Contact: React.FC<ContactProps> = ({ id, title }) => {
             >
                 <motion.div
                     variants={itemVariants}
-                    className="bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-6"
+                    className="bg-zinc-900/50 backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-6"
                 >
                     {/* Chat Window */}
                     <div ref={chatContainerRef} className="h-80 overflow-y-auto pr-2 space-y-4 mb-4">
@@ -127,8 +127,8 @@ const Contact: React.FC<ContactProps> = ({ id, title }) => {
                                     transition={{ type: 'spring', stiffness: 300, damping: 25 }}
                                     className={`flex items-end gap-2 ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                                 >
-                                    {msg.role === 'model' && <i className="fas fa-robot text-cyan-400 bg-slate-700 p-2 rounded-full w-8 h-8 flex-shrink-0 text-center"></i>}
-                                    <div className={`max-w-xs md:max-w-md p-3 rounded-lg text-sm ${msg.role === 'user' ? 'bg-cyan-500 text-slate-900' : 'bg-slate-700 text-slate-200'}`}>
+                                    {msg.role === 'model' && <i className="fas fa-robot text-cyan-400 bg-zinc-700 p-2 rounded-full w-8 h-8 flex-shrink-0 text-center"></i>}
+                                    <div className={`max-w-xs md:max-w-md p-3 rounded-lg text-sm ${msg.role === 'user' ? 'bg-cyan-500 text-slate-900' : 'bg-zinc-700 text-slate-200'}`}>
                                         {msg.text.split('\n').map((line, i) => <p key={i}>{line}</p>)}
                                     </div>
                                 </motion.div>
@@ -140,11 +140,11 @@ const Contact: React.FC<ContactProps> = ({ id, title }) => {
                                 animate={{ opacity: 1 }}
                                 className="flex items-end gap-2 justify-start"
                             >
-                                <i className="fas fa-robot text-cyan-400 bg-slate-700 p-2 rounded-full w-8 h-8 flex-shrink-0 text-center"></i>
-                                <div className="bg-slate-700 p-3 rounded-lg flex items-center gap-1.5">
-                                    <motion.span className="w-2 h-2 bg-slate-400 rounded-full" animate={{ y: [0, -4, 0], transition: { duration: 1, repeat: Infinity, ease: "easeInOut", delay: 0 }}} />
-                                    <motion.span className="w-2 h-2 bg-slate-400 rounded-full" animate={{ y: [0, -4, 0], transition: { duration: 1, repeat: Infinity, ease: "easeInOut", delay: 0.15 }}} />
-                                    <motion.span className="w-2 h-2 bg-slate-400 rounded-full" animate={{ y: [0, -4, 0], transition: { duration: 1, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}} />
+                                <i className="fas fa-robot text-cyan-400 bg-zinc-700 p-2 rounded-full w-8 h-8 flex-shrink-0 text-center"></i>
+                                <div className="bg-zinc-700 p-3 rounded-lg flex items-center gap-1.5">
+                                    <motion.span className="w-2 h-2 bg-zinc-400 rounded-full" animate={{ y: [0, -4, 0], transition: { duration: 1, repeat: Infinity, ease: "easeInOut", delay: 0 }}} />
+                                    <motion.span className="w-2 h-2 bg-zinc-400 rounded-full" animate={{ y: [0, -4, 0], transition: { duration: 1, repeat: Infinity, ease: "easeInOut", delay: 0.15 }}} />
+                                    <motion.span className="w-2 h-2 bg-zinc-400 rounded-full" animate={{ y: [0, -4, 0], transition: { duration: 1, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}} />
                                 </div>
                             </motion.div>
                         )}
@@ -159,7 +159,7 @@ const Contact: React.FC<ContactProps> = ({ id, title }) => {
                             placeholder="Ask a question or type a message..."
                             aria-label="Chat message"
                             disabled={!chat}
-                            className="w-full bg-white/5 p-3 rounded-md border border-white/10 focus:ring-2 focus:ring-cyan-400 focus:outline-none transition-shadow disabled:bg-slate-700/50"
+                            className="w-full bg-white/5 p-3 rounded-md border border-white/10 focus:ring-2 focus:ring-cyan-400 focus:outline-none transition-shadow disabled:bg-zinc-700/50"
                         />
                         <motion.button 
                             type="submit" 

@@ -12,7 +12,7 @@ interface EducationProps {
 const Education: React.FC<EducationProps> = ({ id, title, onCertificateSelect }) => {
   return (
     <Section id={id} title={title}>
-      <div className="bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-8">
+      <div className="bg-zinc-900/50 backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-8">
         <ul>
           {EDUCATION.map(item => (
             <li

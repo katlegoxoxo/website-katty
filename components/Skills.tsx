@@ -58,7 +58,7 @@ const Skills: React.FC<SkillsProps> = ({ id, title }) => {
         {SKILL_CATEGORIES.map(category => (
           <motion.div
             key={category.title}
-            className="bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-6"
+            className="bg-zinc-900/50 backdrop-blur-sm border border-white/10 rounded-xl p-6"
             variants={skillItemVariants}
           >
             <h3 className="font-bold text-lg mb-4 text-slate-200">{category.title}</h3>
@@ -134,7 +134,7 @@ const Skills: React.FC<SkillsProps> = ({ id, title }) => {
             <motion.div
               key={tech.name}
               variants={techStackItemVariants}
-              className="flex flex-col items-center justify-center gap-3 w-28 h-28 sm:w-32 sm:h-32 bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl text-center p-2 sm:p-4 group"
+              className="flex flex-col items-center justify-center gap-3 w-28 h-28 sm:w-32 sm:h-32 bg-zinc-900/50 backdrop-blur-sm border border-white/10 rounded-xl text-center p-2 sm:p-4 group"
               whileHover={{ 
                 scale: 1.1, 
                 y: -8, 

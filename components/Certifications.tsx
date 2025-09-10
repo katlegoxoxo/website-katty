@@ -28,7 +28,7 @@ const Certifications: React.FC<CertificationsProps> = ({ id, title }) => {
   return (
     <Section id={id} title={title}>
       <motion.div 
-        className="bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-8"
+        className="bg-zinc-900/50 backdrop-blur-sm border border-white/10 rounded-xl p-8"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

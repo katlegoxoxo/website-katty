@@ -41,7 +41,7 @@ const Projects: React.FC<ProjectsProps> = ({ id, title, onProjectSelect }) => {
             layoutId={`card-${project.name}`}
             variants={itemVariants}
             onClick={() => onProjectSelect(project)}
-            className="bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col group cursor-pointer"
+            className="bg-zinc-900/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col group cursor-pointer"
             whileHover={{ y: -10, scale: 1.05, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
           >
             <div className="flex justify-between items-start mb-3">

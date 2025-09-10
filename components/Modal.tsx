@@ -32,7 +32,7 @@ const Modal: React.FC<ModalProps> = ({ project, onClose }) => {
       >
         <motion.div
           layoutId={`card-${project.name}`}
-          className="bg-slate-800/80 border border-white/10 rounded-xl w-full max-w-3xl max-h-[90vh] flex flex-col overflow-hidden"
+          className="bg-zinc-900/80 border border-white/10 rounded-xl w-full max-w-3xl max-h-[90vh] flex flex-col overflow-hidden"
         >
           <div className="flex-shrink-0">
               {project.imageUrl && (
@@ -103,7 +103,7 @@ const Modal: React.FC<ModalProps> = ({ project, onClose }) => {
         {/* Close button positioned outside the modal card */}
         <button 
           onClick={onClose} 
-          className="absolute -top-3 -right-3 text-slate-200 bg-slate-800 rounded-full w-10 h-10 flex items-center justify-center border-2 border-slate-700 hover:bg-cyan-500 hover:text-slate-900 hover:border-cyan-500 transition-all duration-300 transform hover:scale-110 hover:rotate-90"
+          className="absolute -top-3 -right-3 text-slate-200 bg-zinc-900 rounded-full w-10 h-10 flex items-center justify-center border-2 border-zinc-700 hover:bg-cyan-500 hover:text-slate-900 hover:border-cyan-500 transition-all duration-300 transform hover:scale-110 hover:rotate-90"
           aria-label="Close project details"
         >
             <i className="fas fa-times text-lg"></i>
