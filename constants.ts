@@ -41,10 +41,9 @@ export const TECH_STACK_CATEGORIES: TechStackCategory[] = [
   {
     title: 'Tools & Platforms',
     technologies: [
-      { name: 'Git', icon: 'fab fa-git-alt' },
       { name: 'GitHub', icon: 'fab fa-github' },
       { name: 'Android Studio', icon: 'fab fa-android' },
-      { name: 'Google Cloud', icon: 'fab fa-google' },
+      { name: 'VS Code', icon: 'fas fa-code' },
     ],
   },
 ];
