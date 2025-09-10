@@ -1,4 +1,4 @@
-import type { Project, SkillCategory, EducationItem, Certification } from './types';
+import type { Project, SkillCategory, EducationItem, Certification, Experience } from './types';
 
 export const NAV_LINKS = [
   { name: 'Home', id: 'home' },
@@ -6,6 +6,7 @@ export const NAV_LINKS = [
   { name: 'Projects', id: 'projects' },
   { name: 'Skills', id: 'skills' },
   { name: 'Education', id: 'education' },
+  { name: 'Experience', id: 'experience' },
   { name: 'Certifications', id: 'certifications' },
   { name: 'Contact', id: 'contact' },
 ];
@@ -141,6 +142,18 @@ export const EDUCATION: EducationItem[] = [
   }
 ];
 
+
+export const EXPERIENCE: Experience[] = [
+  {
+    role: 'Digital Associate',
+    company: 'Capaciti',
+    dateRange: 'July 2025 - Present',
+    description: [
+      'Actively engaged in continuous learning, focusing on Python and the principles of Artificial Intelligence to contribute to modern, data-driven projects.',
+      'Collaborating with teams to support digital initiatives and apply developing technical skills in a professional environment.'
+    ]
+  }
+];
 
 export const CERTIFICATIONS: Certification[] = [
   { name: 'Generative AI with Large Language Models', issuer: 'AWS & DeepLearning.AI', date: 'Aug 22, 2025', imageUrl: '/assets/certs/aws-gen-ai-llm.png', verifyUrl: 'https://coursera.org/verify/2SRX3MZ2EAC2' },

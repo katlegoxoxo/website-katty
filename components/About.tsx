@@ -18,7 +18,7 @@ const About: React.FC<AboutProps> = ({ id, title }) => {
         transition={{ duration: 0.6 }}
       >
         <p className="text-slate-300 leading-relaxed">
-          As a recent IT graduate, achieving a Diploma with Distinction, I am a passionate and detail-oriented Software Developer driven by the challenge of transforming complex problems into elegant, user-centric digital solutions. My foundation is built on a strong understanding of object-oriented programming, data structures, and a keen eye for clean, maintainable code.
+          As a passionate and detail-oriented Software Developer, I leverage my recent Diploma with Distinction in IT to transform complex problems into elegant, user-centric digital solutions. Currently, as a Digital Associate at Capaciti, I am actively expanding my skill set in AI and Python, applying my foundational knowledge to real-world digital initiatives.
         </p>
         <p className="text-slate-300 leading-relaxed">
           My most significant practical experience comes from developing a comprehensive web and mobile application for a real-world clinic. This project was a deep dive into the full software development lifecycle—from initial stakeholder meetings and requirements gathering to designing a responsive UI, implementing core features like booking and user authentication, and managing the project with Git and Trello. It solidified my ability to bridge the gap between user needs and technical execution.

@@ -42,3 +42,10 @@ export interface Certification {
   verifyUrl: string;
   isBadge?: boolean;
 }
+
+export interface Experience {
+  role: string;
+  company: string;
+  dateRange: string;
+  description: string[];
+}

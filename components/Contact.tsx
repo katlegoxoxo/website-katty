@@ -38,7 +38,7 @@ const Contact: React.FC<ContactProps> = ({ id, title }) => {
                 - Skills: ${skillsSummary}.
                 - Projects: ${projectsSummary}.
                 - Education: ${educationSummary}.
-                - Availability: Katlego has completed his studies and is available to start a new role immediately. When asked about his start date, state this and suggest that the best way to discuss specifics is to contact him directly via the links provided.
+                - Availability: When asked about his availability or start date, explain that Katlego is currently working at Capaciti but is always open to hearing about exciting new opportunities. Encourage the user to share details about the role and to contact Katlego directly to discuss specifics.
                 - Keep your answers concise and helpful.
                 - Do not use any markdown formatting (like **bold** or *italics*). Respond in plain text only.
                 - If asked about something you don't know, politely state that you can only answer questions about Katlego's professional background.
