@@ -74,8 +74,12 @@ const Hero: React.FC = () => {
             A passionate software developer focused on creating clean, efficient, and user-friendly digital experiences. I enjoy turning complex problems into simple, beautiful, and intuitive solutions.
           </motion.p>
           <motion.div variants={itemVariants} className="flex flex-wrap justify-center md:justify-start items-center gap-4 mb-4">
-            <Magnetic>
-              <a href="/assets/Katlego_Makete_CV.pdf" download className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold py-2 px-5 rounded-md transition-colors flex items-center gap-2">
+           <Magnetic>
+              <a
+                href={`${import.meta.env.BASE_URL}files/KatlegoShaunMaketeCV.docx`}
+                download
+                className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold py-2 px-5 rounded-md transition-colors flex items-center gap-2"
+              >
                 Download CV <i className="fas fa-download"></i>
               </a>
             </Magnetic>
