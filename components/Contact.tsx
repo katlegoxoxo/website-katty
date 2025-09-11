@@ -176,28 +176,7 @@ const Contact: React.FC<ContactProps> = ({ id, title }) => {
                 </motion.div>
                 
                 {/* Direct Contact Links */}
-                <motion.div
-                    variants={itemVariants}
-                    className="mt-8 text-center"
-                >
-                    <p className="text-slate-400 mb-4">Or, reach out directly:</p>
-                    <div 
-                        className="flex justify-center items-center gap-6 text-slate-400 text-3xl"
-                    >
-                        <Magnetic>
-                            <a href="mailto:katlegomakete18@gmail.com" className="hover:text-cyan-400 transition-colors block p-2" title="Email"><i className="fas fa-envelope"></i></a>
-                        </Magnetic>
-                        <Magnetic>
-                            <a href="https://www.linkedin.com/in/katlego-shaun-makete-72225a250/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors block p-2" title="LinkedIn"><i className="fab fa-linkedin"></i></a>
-                        </Magnetic>
-                        <Magnetic>
-                            <a href="https://github.com/katlegoxoxo" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors block p-2" title="GitHub"><i className="fab fa-github"></i></a>
-                        </Magnetic>
-                        <Magnetic>
-                            <a href="tel:+27695126439" className="hover:text-cyan-400 transition-colors block p-2" title="Phone"><i className="fas fa-phone"></i></a>
-                        </Magnetic>
-                    </div>
-                </motion.div>
+                
             </motion.div>
         </Section>
     );

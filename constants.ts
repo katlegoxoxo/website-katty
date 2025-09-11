@@ -1,4 +1,4 @@
-import type { Project, SkillCategory, EducationItem, Certification, Experience, TechStackCategory } from './types';
+import type { Project, SkillCategory, EducationItem, Certification, Experience, TechStackCategory,CertificationCategory } from './types';
 
 export const NAV_LINKS = [
   { name: 'Home', id: 'home' },
@@ -176,20 +176,45 @@ export const EXPERIENCE: Experience[] = [
   }
 ];
 
-export const CERTIFICATIONS: Certification[] = [
-  { name: 'Generative AI with Large Language Models', issuer: 'AWS & DeepLearning.AI', date: 'Aug 22, 2025', imageUrl: '/assets/certs/aws-gen-ai-llm.png', verifyUrl: 'https://coursera.org/verify/2SRX3MZ2EAC2' },
-  { name: 'Python for Data Science, AI & Development', issuer: 'IBM', date: 'Aug 21, 2025', imageUrl: `${import.meta.env.BASE_URL}files/GenerativeAIwithLargeLanguageModelsCoursera.pdf`, verifyUrl: 'https://coursera.org/verify/BLRPVE4Q019H' },
-  { name: 'AI Foundations: Prompt Engineering with ChatGPT', issuer: 'Arizona State University', date: 'Aug 11, 2025', imageUrl: '/assets/certs/asu-prompt-engineering.png', verifyUrl: 'https://coursera.org/verify/B5QFU48UJRPD' },
-  { name: 'Artificial Intelligence on Microsoft Azure', issuer: 'Microsoft', date: 'Aug 7, 2025', imageUrl: '/assets/certs/microsoft-ai-azure.png', verifyUrl: 'https://coursera.org/verify/6QBSFJ4RZD9P' },
-  { name: 'Introduction to Artificial Intelligent', issuer: 'Capaciti', date: 'Aug 7, 2025', imageUrl: '/assets/certs/capaciti-intro-ai.png', verifyUrl: '#' },
-  { name: 'Introduction to Responsible AI', issuer: 'Google Cloud', date: 'Aug 1, 2025', imageUrl: '/assets/certs/google-responsible-ai.png', verifyUrl: 'https://coursera.org/verify/A36BDVJ507MK' },
-  { name: 'AI For Everyone', issuer: 'DeepLearning.AI', date: 'Jul 31, 2025', imageUrl: '/assets/certs/deeplearning-ai-for-everyone.png', verifyUrl: 'https://coursera.org/verify/2AOOUG9QY4YY' },
-  { name: 'Introduction to Artificial Intelligence (AI)', issuer: 'IBM', date: 'Jul 31, 2025', imageUrl: '/assets/certs/ibm-intro-ai.png', verifyUrl: 'https://coursera.org/verify/W5GIHZV1991C' },
-  { name: 'Introduction to Generative AI', issuer: 'Google Cloud', date: 'Jul 30, 2025', imageUrl: '/assets/certs/google-intro-gen-ai.png', verifyUrl: 'https://coursera.org/verify/VUY4MQ7JEG3Q' },
-  { name: 'AI Essentials', issuer: 'Intel', date: 'Jul 30, 2025', imageUrl: '/assets/certs/intel-ai-essentials.png', verifyUrl: 'https://coursera.org/verify/4RNQ5TI5HC4Y' },
-];
 
-export const BADGES: Certification[] = [
-  { name: 'Python for Data Science and AI', issuer: 'IBM', date: '', imageUrl: '/assets/certs/badge-python-ds-ai.png', verifyUrl: '#', isBadge: true },
-  { name: 'Artificial Intelligence Essentials V2', issuer: 'IBM', date: '', imageUrl: '/assets/certs/badge-ai-essentials.png', verifyUrl: '#', isBadge: true },
+
+export const CERTIFICATION_CATEGORIES: CertificationCategory[] = [
+{
+    title: 'Artificial Intelligence & Cloud',
+    certifications: [
+      { name: 'Trustworthy AI: Managing Bias, Ethics, and Accountability', issuer: 'Johns Hopkins University', date: 'Sep 5, 2025', imageUrl: '/assets/certs/jhu-trustworthy-ai.png', verifyUrl: 'https://coursera.org/verify/KDZB53LMP43J' },
+      { name: 'Building AI Powered Chatbots Without Programming', issuer: 'IBM', date: 'Sep 1, 2025', imageUrl: '/assets/certs/ibm-building-chatbots.png', verifyUrl: 'https://coursera.org/verify/993V6D3PJKCX' },
+      { name: 'Generative AI with Large Language Models', issuer: 'AWS & DeepLearning.AI', date: 'Aug 22, 2025', imageUrl: '/assets/certs/aws-gen-ai-llm.png', verifyUrl: 'https://coursera.org/verify/2SRX3MZ2EAC2' },
+      { name: 'Python for Data Science, AI & Development', issuer: 'IBM', date: 'Aug 21, 2025', imageUrl: '/assets/certs/ibm-python-for-ds.png', verifyUrl: 'https://coursera.org/verify/BLRPVE4Q019H' },
+      { name: 'AI Foundations: Prompt Engineering with ChatGPT', issuer: 'Arizona State University', date: 'Aug 11, 2025', imageUrl: '/assets/certs/asu-prompt-engineering.png', verifyUrl: 'https://coursera.org/verify/B5QFU48UJRPD' },
+      { name: 'Artificial Intelligence on Microsoft Azure', issuer: 'Microsoft', date: 'Aug 7, 2025', imageUrl: '/assets/certs/microsoft-ai-azure.png', verifyUrl: 'https://coursera.org/verify/6QBSFJ4RZD9P' },
+      { name: 'Introduction to Artificial Intelligent', issuer: 'Capaciti', date: 'Aug 7, 2025', imageUrl: '/assets/certs/capaciti-intro-ai.png', verifyUrl: '#' },
+      { name: 'Introduction to Responsible AI', issuer: 'Google Cloud', date: 'Aug 1, 2025', imageUrl: '/assets/certs/google-responsible-ai.png', verifyUrl: 'https://coursera.org/verify/A36BDVJ507MK' },
+      { name: 'AI For Everyone', issuer: 'DeepLearning.AI', date: 'Jul 31, 2025', imageUrl: '/assets/certs/deeplearning-ai-for-everyone.png', verifyUrl: 'https://coursera.org/verify/2AOOUG9QY4YY' },
+      { name: 'Introduction to Artificial Intelligence (AI)', issuer: 'IBM', date: 'Jul 31, 2025', imageUrl: '/assets/certs/ibm-intro-ai.png', verifyUrl: 'https://coursera.org/verify/W5GIHZV1991C' },
+      { name: 'Introduction to Generative AI', issuer: 'Google Cloud', date: 'Jul 30, 2025', imageUrl: '/assets/certs/google-intro-gen-ai.png', verifyUrl: 'https://coursera.org/verify/VUY4MQ7JEG3Q' },
+      { name: 'AI Essentials', issuer: 'Intel', date: 'Jul 30, 2025', imageUrl: '/assets/certs/intel-ai-essentials.png', verifyUrl: 'https://coursera.org/verify/4RNQ5TI5HC4Y' },
+    ]
+  },
+   {
+    title: 'Professional Development',
+    certifications: [
+      { name: 'Negotiation skills: Negotiate and resolve conflict', issuer: 'Macquarie University', date: 'Sep 9, 2025', imageUrl: '/assets/certs/macquarie-negotiation.png', verifyUrl: 'https://coursera.org/verify/T2RH269Z1XLC' },
+      { name: 'Solving Problems with Creative and Critical Thinking', issuer: 'IBM', date: 'Sep 8, 2025', imageUrl: '/assets/certs/ibm-creative-thinking.png', verifyUrl: 'https://coursera.org/verify/GHMI4RDRASAT' },
+      { name: 'Grit and Growth Mindset', issuer: 'Arizona State University', date: 'Sep 8, 2025', imageUrl: '/assets/certs/asu-grit-growth.png', verifyUrl: 'https://coursera.org/verify/QL702FQM4OZI' },
+      { name: 'Positive Psychology: Resilience Skills', issuer: 'University of Pennsylvania', date: 'Sep 8, 2025', imageUrl: '/assets/certs/penn-positive-psychology.png', verifyUrl: 'https://coursera.org/verify/MUA9UNXE4BFA' },
+      { name: 'Managing Conflicts with Cultural and Emotional Intelligence', issuer: 'University of Maryland', date: 'Sep 5, 2025', imageUrl: '/assets/certs/maryland-managing-conflicts.png', verifyUrl: 'https://coursera.org/verify/LZFJB5ZAMOUX' },
+      { name: 'Psychology of the Self', issuer: 'American Psychological Association', date: 'Sep 4, 2025', imageUrl: '/assets/certs/apa-psychology-self.png', verifyUrl: 'https://coursera.org/verify/L9CYDH3CVRAQ' },
+      { name: 'Financial Planning for Young Adults', issuer: 'University of Illinois', date: 'Aug 21, 2025', imageUrl: '/assets/certs/illinois-financial-planning.png', verifyUrl: 'https://coursera.org/verify/L2PXZPMIVMKG' },
+      { name: 'Emotional Intelligence', issuer: 'Arizona State University', date: 'Aug 11, 2025', imageUrl: '/assets/certs/asu-emotional-intelligence.png', verifyUrl: 'https://coursera.org/verify/7724EA4BPJ85' },
+      { name: 'Leading with Impact: Team Dynamics, Strategy and Ethics', issuer: 'Coursera Instructor Network', date: 'Aug 8, 2025', imageUrl: '/assets/certs/coursera-leading-with-impact.png', verifyUrl: 'https://coursera.org/verify/7WZCQGVYZE1M' },
+      { name: 'Finding Your Professional Voice: Confidence & Impact', issuer: 'University of London', date: 'Aug 7, 2025', imageUrl: '/assets/certs/london-professional-voice.png', verifyUrl: 'https://coursera.org/verify/KM5BXYB81CCJ' },
+      { name: 'Work Smarter, Not Harder: Time Management', issuer: 'University of California, Irvine', date: 'Aug 7, 2025', imageUrl: '/assets/certs/uci-time-management.png', verifyUrl: 'https://coursera.org/verify/ML6SABWDWJT0' },
+      { name: 'Introduction to Personal Branding', issuer: 'University of Virginia', date: 'Aug 7, 2025', imageUrl: '/assets/certs/virginia-personal-branding.png', verifyUrl: 'https://coursera.org/verify/UU1UEDVUSV25' },
+      { name: 'Developing Interpersonal Skills', issuer: 'IBM', date: 'Aug 6, 2025', imageUrl: '/assets/certs/ibm-interpersonal-skills.png', verifyUrl: 'https://coursera.org/verify/3QE549QL6V5M' },
+      { name: 'Verbal Communications and Presentation Skills', issuer: 'Starweaver', date: 'Jul 30, 2025', imageUrl: '/assets/certs/starweaver-verbal-communication.png', verifyUrl: 'https://coursera.org/verify/H4IAVOOTJVNY' },
+      { name: 'Write Professional Emails in English', issuer: 'Georgia Institute of Technology', date: 'Jul 30, 2025', imageUrl: '/assets/certs/georgia-tech-emails.png', verifyUrl: 'https://coursera.org/verify/BUIB78D2SQZ0' },
+      { name: 'Active Listening: Enhancing Communication Skills', issuer: 'Coursera Instructor Network', date: 'Jul 30, 2025', imageUrl: '/assets/certs/coursera-active-listening.png', verifyUrl: 'https://coursera.org/verify/72QQM5IRJROV' },
+    ]
+  }
 ];
