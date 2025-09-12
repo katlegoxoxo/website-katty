@@ -137,6 +137,20 @@ export const PROJECTS: Project[] = [
     githubUrl: 'https://github.com/katlegoxoxo',
     imageUrl: 'https://picsum.photos/seed/chatbot/800/600',
   },
+  {
+    name: 'JoBus-AI',
+    date: '08/2025',
+    description: 'Created an AI-powered JoBus using no-code tools, demonstrating an understanding of conversational AI principles and rapid prototyping.',
+      detailedDescription: [
+      { title: 'The Objective', icon: 'fas fa-bullseye', content: 'This project was undertaken to gain a foundational understanding of conversational AI design principles without the overhead of complex coding. The goal was to prototype a chatbot that could effectively answer common questions about AI, demonstrating an understanding of user intent and conversation flow.' },
+      { title: 'Design Process', icon: 'fas fa-drafting-compass', content: 'The core of the work was in the design phase. This involved mapping out potential user questions (intents), identifying key terms (entities), and scripting a decision tree for the chatbot\'s responses. The focus was on creating a conversation that felt natural and genuinely helpful to a non-technical user.' },
+      { title: 'Technology', icon: 'fas fa-tools', content: 'The chatbot was built using a leading no-code AI platform (like Dialogflow or a similar service). This allowed for a focus on the logical and UX aspects of chatbot development rather than the backend implementation, providing a clear view of the underlying concepts.' },
+      { title: 'Strategic Learning', icon: 'fas fa-brain', content: 'Although a no-code project, it provided critical insights into the architecture of conversational AI. Understanding concepts like intents, entities, and context management is directly transferable to building more complex, code-based chatbots with frameworks like the Gemini API. It was a practical lesson in the importance of design-before-development.' }
+    ],
+    technologies: ['No-Code AI'],
+    githubUrl: 'https://github.com/Jozi-Navigators/JoBus-AI.git',
+    imageUrl: 'https://picsum.photos/seed/chatbot/800/600',
+  },
 ];
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
