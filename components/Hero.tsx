@@ -112,7 +112,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.5, type: 'spring' }}
           >
             <img
-              src={`${import.meta.env.BASE_URL}images/giphy.gif`}
+              src={`${import.meta.env.BASE_URL}images/ss.png`}
               alt="Katlego Makete"
               className="w-full h-full object-cover"
             />
