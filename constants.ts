@@ -182,6 +182,7 @@ export const CERTIFICATION_CATEGORIES: CertificationCategory[] = [
 {
     title: 'Artificial Intelligence & Cloud',
     certifications: [
+            { name: 'Microsoft Certified: Azure AI Fundamentals', issuer: 'Microsoft', date: 'May 29, 2024', imageUrl: '/assets/certs/microsoft-azure-ai-fundamentals.png', verifyUrl: 'https://learn.microsoft.com/api/achievements/share/en-us/KatlegoMakete/CFFSR8U9?sharingId=B68336AD14220C2C' },
       { name: 'Trustworthy AI: Managing Bias, Ethics, and Accountability', issuer: 'Johns Hopkins University', date: 'Sep 5, 2025', imageUrl: '/assets/certs/jhu-trustworthy-ai.png', verifyUrl: 'https://coursera.org/verify/KDZB53LMP43J' },
       { name: 'Building AI Powered Chatbots Without Programming', issuer: 'IBM', date: 'Sep 1, 2025', imageUrl: '/assets/certs/ibm-building-chatbots.png', verifyUrl: 'https://coursera.org/verify/993V6D3PJKCX' },
       { name: 'Generative AI with Large Language Models', issuer: 'AWS & DeepLearning.AI', date: 'Aug 22, 2025', imageUrl: '/assets/certs/aws-gen-ai-llm.png', verifyUrl: 'https://coursera.org/verify/2SRX3MZ2EAC2' },

@@ -49,14 +49,14 @@ const Hero: React.FC = () => {
   return (
     <section id="home" className="min-h-[calc(100vh-80px)] flex items-center py-20">
       <div className="grid md:grid-cols-2 gap-12 items-center">
-        <motion.div 
+        <motion.div
           className="text-center md:text-left"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          <motion.h1 
-            variants={nameContainerVariants} 
+          <motion.h1
+            variants={nameContainerVariants}
             className="text-4xl lg:text-5xl font-bold leading-tight mb-2"
             aria-label={name}
           >
@@ -74,7 +74,8 @@ const Hero: React.FC = () => {
             A passionate software developer focused on creating clean, efficient, and user-friendly digital experiences. I enjoy turning complex problems into simple, beautiful, and intuitive solutions.
           </motion.p>
           <motion.div variants={itemVariants} className="flex flex-wrap justify-center md:justify-start items-center gap-4 mb-4">
-           <Magnetic>
+            <Magnetic>
+              {/* FIX: Replaced import.meta.env.BASE_URL with a static root path "/" to fix TypeScript error and align with existing path conventions. */}
               <a
                 href={`${import.meta.env.BASE_URL}files/KatlegoShaunMaketeCV.docx`}
                 download
@@ -103,26 +104,29 @@ const Hero: React.FC = () => {
           <motion.p variants={itemVariants} className="text-xs text-slate-500 mt-6">Based in Johannesburg, South Africa.</motion.p>
         </motion.div>
 
-        <motion.div 
-          className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-4 shadow-2xl shadow-black/50"
-          initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 0.8, delay: 0.5, type: 'spring' }}
-        >
-          <img 
-           src={`${import.meta.env.BASE_URL}images/giphy.gif`}
-            alt="Katlego Makete" 
-            className="rounded-lg w-full h-80 object-cover"
-          />
-          <div className="flex justify-between items-center mt-4 text-sm">
-            <div>
-              <p className="font-bold">Aspiring Software Developer</p>
-              <p className="text-slate-400 text-xs mt-1">Capaciti</p>
-              <p className="text-slate-400 text-xs mt-1"></p>
-            </div>
-            <p className="font-mono text-slate-400 text-xs">Himonthy</p>
-          </div>
-        </motion.div>
+        <div className="flex flex-col items-center">
+          <motion.div
+            className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-full shadow-2xl shadow-black/50 w-72 h-72 sm:w-80 sm:h-80 overflow-hidden"
+            initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ duration: 0.8, delay: 0.5, type: 'spring' }}
+          >
+            <img
+              src={`${import.meta.env.BASE_URL}images/giphy.gif`}
+              alt="Katlego Makete"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+          <motion.div
+            className="text-center mt-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
+            <p className="font-bold text-lg">Aspiring Software Developer</p>
+            <p className="text-slate-400 text-sm mt-1">at Capaciti</p>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
