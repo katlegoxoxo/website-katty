@@ -10,9 +10,11 @@ export interface Project {
   }[];
   technologies: string[];
   githubUrl: string;
+  liveUrl?: string;
   imageUrl: string;
   demoComponent?: string;
 }
+
 
 export interface Skill {
     name: string;

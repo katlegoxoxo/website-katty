@@ -62,6 +62,7 @@ export const PROJECTS: Project[] = [
     ],
     technologies: ['Gemini API', 'React', 'Node.js', 'TypeScript'],
     githubUrl: 'https://github.com/katlegoxoxo/ai-resume-builder.git',
+    liveUrl: 'https://ai-resume-builder-nine-mauve.vercel.app/',
     imageUrl: `${import.meta.env.BASE_URL}images/ai-resume-builder.png`,
     demoComponent: 'resumeBuilder',
   },
@@ -293,7 +294,7 @@ export const CERTIFICATION_CATEGORIES: CertificationCategory[] = [
   {
     title: 'Professional Development',
     certifications: [
-     
+
       {
         name: 'Financial Planning for Young Adults',
         issuer: 'University of Illinois',
@@ -364,7 +365,7 @@ export const CERTIFICATION_CATEGORIES: CertificationCategory[] = [
         imageUrl: `${import.meta.env.BASE_URL}images/active_listening_enhancing_communication_skills_coursera.jpg`,
         verifyUrl: 'https://coursera.org/verify/72QQM5IRJROV'
       },
-       {
+      {
         name: 'Negotiation skills: Negotiate and resolve conflict',
         issuer: 'Macquarie University',
         date: 'Sep 9, 2025',
