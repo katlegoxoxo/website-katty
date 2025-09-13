@@ -78,6 +78,7 @@ export const PROJECTS: Project[] = [
     ],
     technologies: ['Gemini API', 'React', 'D3.js', 'Chart.js'],
     githubUrl: 'https://github.com/Jozi-Navigators/Sentiment-Analysis-Dashboard.git',
+    liveUrl: 'https://jozi-navigators.github.io/Sentiment-Analysis-Dashboard/',
     imageUrl: `${import.meta.env.BASE_URL}images/SentimentAnalysisDashboard.png`,
     demoComponent: 'sentimentAnalysis',
   },
@@ -93,6 +94,7 @@ export const PROJECTS: Project[] = [
     ],
     technologies: ['React', 'Firebase', 'Real-time Chat', 'UI/UX'],
     githubUrl: 'https://github.com/katlegoxoxo',
+    liveUrl: 'https://lock-in-one.vercel.app/',
     imageUrl: `${import.meta.env.BASE_URL}images/AILearning.png`,
   },
   {
@@ -107,6 +109,7 @@ export const PROJECTS: Project[] = [
     ],
     technologies: ['Android Studio', 'HTML/CSS', 'Git', 'UI/UX'],
     githubUrl: 'https://github.com/katlegoxoxo',
+
     imageUrl: 'https://picsum.photos/seed/juta/800/600',
   },
   {
@@ -121,6 +124,7 @@ export const PROJECTS: Project[] = [
     ],
     technologies: ['HTML', 'JavaScript', 'APIs'],
     githubUrl: 'https://github.com/katlegoxoxo/image-gen-xo.git',
+    liveUrl: 'https://image-gen-xo-main.tiiny.site/',
     imageUrl: `${import.meta.env.BASE_URL}images/slatt.png`,
     demoComponent: 'imageGeneration',
   },
@@ -136,6 +140,7 @@ export const PROJECTS: Project[] = [
     ],
     technologies: ['No-Code AI', 'Chatbot Design'],
     githubUrl: 'https://github.com/katlegoxoxo',
+    liveUrl: '#',
     imageUrl: 'https://picsum.photos/seed/chatbot/800/600',
   },
   {
@@ -150,6 +155,7 @@ export const PROJECTS: Project[] = [
     ],
     technologies: ['No-Code AI'],
     githubUrl: 'https://github.com/Jozi-Navigators/JoBus-AI.git',
+    liveUrl: 'https://jozi-navigators.github.io/JoBus-AI/',
     imageUrl: 'https://picsum.photos/seed/chatbot/800/600',
   },
 ];

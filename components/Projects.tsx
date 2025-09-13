@@ -54,10 +54,21 @@ const Projects: React.FC<ProjectsProps> = ({ id, title, onProjectSelect }) => {
                   </span>
                 ))}
               </div>
-              <div className="mt-auto">
+              <div className="mt-auto pt-4 border-t border-white/10 flex items-center justify-between">
                 <span className="text-sm font-semibold text-slate-300 group-hover:text-cyan-400 transition-colors">
                   <i className="fas fa-expand-alt mr-2"></i>View Details
                 </span>
+                {project.liveUrl && project.liveUrl !== '#' && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold py-2 px-4 rounded-md transition-colors text-sm flex items-center gap-2"
+                  >
+                    View Site <i className="fas fa-external-link-alt"></i>
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}
