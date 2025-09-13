@@ -3,7 +3,7 @@ import Section from './Section';
 import { CERTIFICATION_CATEGORIES } from '../constants';
 import { motion, Variants, AnimatePresence } from 'framer-motion';
 import type { Certification } from '../types';
-import ImageViewerModal from './ImageViewerModal'; // make sure path is correct
+import ImageViewerModal from './ImageViewerModal';
 
 interface CertificationsProps {
   id: string;
@@ -14,9 +14,7 @@ const containerVariants: Variants = {
   hidden: { opacity: 1 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.08,
-    },
+    transition: { staggerChildren: 0.08 },
   },
 };
 
@@ -30,7 +28,7 @@ const CERTS_TO_SHOW = 8;
 
 const Certifications: React.FC<CertificationsProps> = ({ id, title }) => {
   const [expandedCategories, setExpandedCategories] = useState<{ [key: string]: boolean }>({});
-  const [selectedCertificate, setSelectedCertificate] = useState<Certification | null>(null); // added state
+  const [selectedCertificate, setSelectedCertificate] = useState<Certification | null>(null);
 
   const toggleCategory = (categoryTitle: string) => {
     setExpandedCategories(prev => ({
@@ -40,7 +38,12 @@ const Certifications: React.FC<CertificationsProps> = ({ id, title }) => {
   };
 
   const handleViewCertificate = (cert: Certification) => {
-    setSelectedCertificate(cert); // open modal
+    setSelectedCertificate(cert);
+  };
+
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>, cert: Certification) => {
+    console.error(`❌ Failed to load image for ${cert.name}:`, cert.imageUrl);
+    e.currentTarget.src = "https://via.placeholder.com/400x200?text=No+Image";
   };
 
   return (
@@ -88,7 +91,7 @@ const Certifications: React.FC<CertificationsProps> = ({ id, title }) => {
                           src={cert.imageUrl}
                           alt={`${cert.name} certificate`}
                           className="w-full aspect-video object-cover border-b border-white/10"
-                          loading="lazy"
+                          onError={(e) => handleImageError(e, cert)}
                         />
                       ) : (
                         <div className="w-full aspect-video bg-black/20 border-b border-white/10 flex items-center justify-center p-4">
@@ -130,7 +133,7 @@ const Certifications: React.FC<CertificationsProps> = ({ id, title }) => {
         })}
       </div>
 
-      {/* Render modal here */}
+      {/* Modal */}
       <AnimatePresence>
         {selectedCertificate && (
           <ImageViewerModal
