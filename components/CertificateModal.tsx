@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
+import type { EducationItem } from '../types';
 
 interface CertificateModalProps {
-  url: string;
-  title: string;
+  item: EducationItem;
   onClose: () => void;
 }
 
@@ -19,10 +19,10 @@ const modalVariants: Variants = {
     exit: { opacity: 0, scale: 0.8, y: 50, transition: { duration: 0.2 } },
 };
 
-const CertificateModal: React.FC<CertificateModalProps> = ({ url, title, onClose }) => {
+const CertificateModal: React.FC<CertificateModalProps> = ({ item, onClose }) => {
   const [isLoading, setIsLoading] = useState(true);
 
-  if (!url) return null;
+  if (!item.certificateUrl) return null;
 
   return (
     <motion.div
@@ -30,39 +30,15 @@ const CertificateModal: React.FC<CertificateModalProps> = ({ url, title, onClose
       variants={backdropVariants}
       initial="hidden"
       animate="visible"
-      exit="exit"
+      exit="hidden"
       onClick={onClose}
     >
       <motion.div
         variants={modalVariants}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
-        className="bg-zinc-900/80 border border-white/10 rounded-xl w-full max-w-4xl h-[85vh] flex flex-col overflow-hidden"
+        className="bg-slate-800/80 border border-white/10 rounded-xl w-full max-w-4xl h-[85vh] flex flex-col relative overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex-shrink-0 p-4 border-b border-white/10 flex justify-between items-center bg-zinc-900">
-            <h3 className="text-lg font-bold text-cyan-400 truncate pr-4">{title}</h3>
-            <div className="flex items-center gap-4">
-            <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white/10 hover:bg-white/20 text-slate-200 font-bold py-1 px-3 rounded-md transition-colors text-sm flex items-center gap-2"
-            >
-                <span>Open</span>
-                <i className="fas fa-external-link-alt text-xs"></i>
-            </a>
-            <button 
-                onClick={onClose} 
-                className="text-slate-400 hover:text-white transition-colors"
-                aria-label="Close certificate viewer"
-            >
-                <i className="fas fa-times text-xl"></i>
-            </button>
-            </div>
-        </div>
-        <div className="flex-grow relative bg-black/50">
+        <div className="flex-grow p-1 md:p-2 relative bg-slate-900/50">
             {isLoading && (
                 <div className="absolute inset-0 flex items-center justify-center" aria-live="polite">
                     <i className="fas fa-spinner fa-spin text-cyan-400 text-4xl"></i>
@@ -70,12 +46,19 @@ const CertificateModal: React.FC<CertificateModalProps> = ({ url, title, onClose
                 </div>
             )}
             <iframe
-                src={url}
-                title={`${title} Certificate`}
-                className={`w-full h-full border-0 transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+                src={item.certificateUrl}
+                title={`${item.degree} Certificate`}
+                className={`w-full h-full border-0 rounded-md transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
                 onLoad={() => setIsLoading(false)}
             />
         </div>
+         <button 
+            onClick={onClose} 
+            className="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors bg-slate-900/60 rounded-full w-10 h-10 flex items-center justify-center z-10"
+            aria-label="Close certificate viewer"
+        >
+            <i className="fas fa-times"></i>
+        </button>
       </motion.div>
     </motion.div>
   );
