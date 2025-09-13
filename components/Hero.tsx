@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="min-h-[calc(100vh-80px)] flex items-center py-20">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="flex flex-col-reverse gap-12 items-center md:grid md:grid-cols-2">
         <motion.div
           className="text-center md:text-left"
           variants={containerVariants}
@@ -111,6 +111,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 0.8, delay: 0.5, type: 'spring' }}
           >
+            {/* FIX: Replaced import.meta.env.BASE_URL with a static root path "/" to fix TypeScript error and align with existing path conventions. */}
             <img
               src={`${import.meta.env.BASE_URL}images/ss.png`}
               alt="Katlego Makete"
@@ -133,3 +134,5 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
+
+

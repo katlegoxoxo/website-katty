@@ -1,4 +1,4 @@
-import type { Project, SkillCategory, EducationItem, Certification, Experience, TechStackCategory,CertificationCategory } from './types';
+import type { Project, SkillCategory, EducationItem, Certification, Experience, TechStackCategory, CertificationCategory } from './types';
 
 export const NAV_LINKS = [
   { name: 'Home', id: 'home' },
@@ -54,7 +54,7 @@ export const PROJECTS: Project[] = [
     name: 'AI Resume Builder',
     date: '08/2025',
     description: 'An intelligent resume generation system that creates customized, ATS-friendly resumes based on user inputs and job descriptions, leveraging AI to highlight key skills and experiences.',
-     detailedDescription: [
+    detailedDescription: [
       { title: 'The Challenge', icon: 'fas fa-bullseye', content: 'Manually tailoring a resume for every job application is time-consuming and often fails to pass initial screening by Applicant Tracking Systems (ATS). This project\'s goal was to automate this process, creating highly relevant, keyword-optimized resumes that capture a recruiter\'s attention.' },
       { title: 'Core Functionality', icon: 'fas fa-cogs', content: 'The application provides a clean, step-by-step interface for users to input their career history, education, and skills. By providing a target job description, users trigger an AI-powered process that analyzes the requirements and strategically rewrites their bullet points to align perfectly with the role.' },
       { title: 'Technical Breakdown', icon: 'fas fa-code-branch', content: 'Built with React and TypeScript for a type-safe frontend, the application communicates with a Node.js backend that securely handles requests to the Gemini API. The core logic involves sophisticated prompt engineering to instruct the model to act as a professional resume writer, extracting key verbs and metrics from the job description and weaving them into the user\'s experience. The final resume is then generated as a downloadable PDF.' },
@@ -69,7 +69,7 @@ export const PROJECTS: Project[] = [
     name: 'Sentiment Analysis Dashboard',
     date: '09/2025',
     description: 'An interactive dashboard that analyzes sentiment in text data. Users can input text directly or upload files to understand emotional tone in customer reviews, social media posts, or other content.',
-     detailedDescription: [
+    detailedDescription: [
       { title: 'The Goal', icon: 'fas fa-bullseye', content: 'The project aimed to create an accessible tool for understanding the emotional tone within text data, transforming raw text from sources like customer reviews or social media into actionable insights. The primary objective was to present this complex analysis in a simple, visually intuitive dashboard.' },
       { title: 'User Interaction', icon: 'fas fa-mouse-pointer', content: 'The user experience is centered around a single text input area. After pasting their content and clicking "Analyze," the results are displayed almost instantly. The UI uses color-coding and clear iconography to immediately convey the overall sentiment before the user even reads the details.' },
       { title: 'Technical Implementation', icon: 'fas fa-microchip', content: 'This project leverages the Gemini API\'s JSON mode for structured data output. The React frontend sends the user\'s text and receives a clean JSON object containing the sentiment, confidence score, and influential keywords. This data is then fed into D3.js and Chart.js components to render dynamic, animated gauges and charts, providing a rich data visualization experience.' },
@@ -84,7 +84,7 @@ export const PROJECTS: Project[] = [
     name: 'AI School Buddy ',
     date: '09/2025',
     description: 'A collaborative learning platform for students, featuring subject-specific chat rooms, resource sharing, and a peer-to-peer tutoring scheduler to enhance academic support and engagement.',
-     detailedDescription: [
+    detailedDescription: [
       { title: 'The Vision', icon: 'fas fa-bullseye', content: 'The goal was to build more than just a chat app; it was to create a digital ecosystem that enhances collaborative learning. The project addressed the need for a centralized platform where students could connect, share resources, and support each other\'s academic journey outside the classroom.' },
       { title: 'Feature Breakdown', icon: 'fas fa-list-ul', content: 'The platform is built around three core features: 1) Real-time. 2) A shared document repository for uploading and accessing study materials.' },
       { title: 'Architecture & Tech', icon: 'fas fa-sitemap', content: 'The application was built using React for the frontend' },
@@ -98,7 +98,7 @@ export const PROJECTS: Project[] = [
     name: 'Juta Medical & Dental Centre',
     date: '04/2024',
     description: 'Website & mobile app (Android) for a clinic. Features: booking forms, contact listing, responsive UI, basic auth, and user-role docs. Implemented with Android Studio & responsive front-end; used Git & Trello for project workflow.',
-      detailedDescription: [
+    detailedDescription: [
       { title: 'The Objective', icon: 'fas fa-bullseye', content: 'The clinic required a professional digital presence to better serve its patients. The project\'s scope was twofold: a public-facing, responsive website for information and appointment requests, and a secure native Android app for existing patients to access their records and communicate with the clinic.' },
       { title: 'Platform Features', icon: 'fas fa-desktop', content: 'The website, built with clean HTML/CSS and JavaScript, prioritizes accessibility and ease of use, ensuring patients can quickly find information or book an appointment. The Android app, developed in Java using Android Studio, provides a more personalized experience with user login, role-based document access (e.g., viewing lab results), and a secure messaging feature.' },
       { title: 'Development Process', icon: 'fas fa-tasks', content: 'This was a real-world project that demanded strong project management skills. The development lifecycle was managed using Agile principles, with Trello boards for sprint planning and task tracking. Git and GitHub were used for version control, ensuring code integrity and facilitating collaboration.' },
@@ -112,7 +112,7 @@ export const PROJECTS: Project[] = [
     name: 'Slatt Image Gen AI',
     date: '08/2025',
     description: 'Created an AI-powered image generation app using modern JS and APIs for creative automation.',
-      detailedDescription: [
+    detailedDescription: [
       { title: 'The Goal', icon: 'fas fa-bullseye', content: 'To create a simple, fast, and accessible interface for interacting with a powerful image generation model. The project aimed to demystify generative AI by providing a hands-on tool that allows anyone to turn their textual ideas into visual art.' },
       { title: 'User Experience', icon: 'fas fa-mouse-pointer', content: 'The UI is intentionally minimalist. It consists of a prominent prompt input field, a "Generate" button, and a display area. Loading states are clearly communicated to the user while the AI is processing the request, ensuring a smooth and transparent experience.' },
       { title: 'Technical Workflow', icon: 'fas fa-project-diagram', content: 'The application is a single-page app built with modern JavaScript (ES6+), HTML, and CSS. On form submission, it makes a direct, asynchronous call to the image generation endpoint of the Gemini API. The API returns the image data as a base64 encoded string, which is then rendered directly into an `<img>` tag on the page.' },
@@ -127,7 +127,7 @@ export const PROJECTS: Project[] = [
     name: 'AI Fundamentals Chatbot',
     date: '08/2025',
     description: 'Created an AI-powered chatbot using no-code tools, demonstrating an understanding of conversational AI principles and rapid prototyping.',
-      detailedDescription: [
+    detailedDescription: [
       { title: 'The Objective', icon: 'fas fa-bullseye', content: 'This project was undertaken to gain a foundational understanding of conversational AI design principles without the overhead of complex coding. The goal was to prototype a chatbot that could effectively answer common questions about AI, demonstrating an understanding of user intent and conversation flow.' },
       { title: 'Design Process', icon: 'fas fa-drafting-compass', content: 'The core of the work was in the design phase. This involved mapping out potential user questions (intents), identifying key terms (entities), and scripting a decision tree for the chatbot\'s responses. The focus was on creating a conversation that felt natural and genuinely helpful to a non-technical user.' },
       { title: 'Technology', icon: 'fas fa-tools', content: 'The chatbot was built using a leading no-code AI platform (like Dialogflow or a similar service). This allowed for a focus on the logical and UX aspects of chatbot development rather than the backend implementation, providing a clear view of the underlying concepts.' },
@@ -141,7 +141,7 @@ export const PROJECTS: Project[] = [
     name: 'JoBus-AI',
     date: '08/2025',
     description: 'Created an AI-powered JoBus using no-code tools, demonstrating an understanding of conversational AI principles and rapid prototyping.',
-      detailedDescription: [
+    detailedDescription: [
       { title: 'The Objective', icon: 'fas fa-bullseye', content: 'This project was undertaken to gain a foundational understanding of conversational AI design principles without the overhead of complex coding. The goal was to prototype a chatbot that could effectively answer common questions about AI, demonstrating an understanding of user intent and conversation flow.' },
       { title: 'Design Process', icon: 'fas fa-drafting-compass', content: 'The core of the work was in the design phase. This involved mapping out potential user questions (intents), identifying key terms (entities), and scripting a decision tree for the chatbot\'s responses. The focus was on creating a conversation that felt natural and genuinely helpful to a non-technical user.' },
       { title: 'Technology', icon: 'fas fa-tools', content: 'The chatbot was built using a leading no-code AI platform (like Dialogflow or a similar service). This allowed for a focus on the logical and UX aspects of chatbot development rather than the backend implementation, providing a clear view of the underlying concepts.' },
@@ -193,43 +193,219 @@ export const EXPERIENCE: Experience[] = [
 
 
 export const CERTIFICATION_CATEGORIES: CertificationCategory[] = [
-{
+  {
     title: 'Artificial Intelligence & Cloud',
     certifications: [
-            { name: 'Microsoft Certified: Azure AI Fundamentals', issuer: 'Microsoft', date: 'May 29, 2024', imageUrl: '/assets/certs/microsoft-azure-ai-fundamentals.png', verifyUrl: 'https://learn.microsoft.com/api/achievements/share/en-us/KatlegoMakete/CFFSR8U9?sharingId=B68336AD14220C2C' },
-      { name: 'Trustworthy AI: Managing Bias, Ethics, and Accountability', issuer: 'Johns Hopkins University', date: 'Sep 5, 2025', imageUrl: '/assets/certs/jhu-trustworthy-ai.png', verifyUrl: 'https://coursera.org/verify/KDZB53LMP43J' },
-      { name: 'Building AI Powered Chatbots Without Programming', issuer: 'IBM', date: 'Sep 1, 2025', imageUrl: '/assets/certs/ibm-building-chatbots.png', verifyUrl: 'https://coursera.org/verify/993V6D3PJKCX' },
-      { name: 'Generative AI with Large Language Models', issuer: 'AWS & DeepLearning.AI', date: 'Aug 22, 2025', imageUrl: '/assets/certs/aws-gen-ai-llm.png', verifyUrl: 'https://coursera.org/verify/2SRX3MZ2EAC2' },
-      { name: 'Python for Data Science, AI & Development', issuer: 'IBM', date: 'Aug 21, 2025', imageUrl: '/assets/certs/ibm-python-for-ds.png', verifyUrl: 'https://coursera.org/verify/BLRPVE4Q019H' },
-      { name: 'AI Foundations: Prompt Engineering with ChatGPT', issuer: 'Arizona State University', date: 'Aug 11, 2025', imageUrl: '/assets/certs/asu-prompt-engineering.png', verifyUrl: 'https://coursera.org/verify/B5QFU48UJRPD' },
-      { name: 'Artificial Intelligence on Microsoft Azure', issuer: 'Microsoft', date: 'Aug 7, 2025', imageUrl: '/assets/certs/microsoft-ai-azure.png', verifyUrl: 'https://coursera.org/verify/6QBSFJ4RZD9P' },
-      { name: 'Introduction to Artificial Intelligent', issuer: 'Capaciti', date: 'Aug 7, 2025', imageUrl: '/assets/certs/capaciti-intro-ai.png', verifyUrl: '#' },
-      { name: 'Introduction to Responsible AI', issuer: 'Google Cloud', date: 'Aug 1, 2025', imageUrl: '/assets/certs/google-responsible-ai.png', verifyUrl: 'https://coursera.org/verify/A36BDVJ507MK' },
-      { name: 'AI For Everyone', issuer: 'DeepLearning.AI', date: 'Jul 31, 2025', imageUrl: '/assets/certs/deeplearning-ai-for-everyone.png', verifyUrl: 'https://coursera.org/verify/2AOOUG9QY4YY' },
-      { name: 'Introduction to Artificial Intelligence (AI)', issuer: 'IBM', date: 'Jul 31, 2025', imageUrl: '/assets/certs/ibm-intro-ai.png', verifyUrl: 'https://coursera.org/verify/W5GIHZV1991C' },
-      { name: 'Introduction to Generative AI', issuer: 'Google Cloud', date: 'Jul 30, 2025', imageUrl: '/assets/certs/google-intro-gen-ai.png', verifyUrl: 'https://coursera.org/verify/VUY4MQ7JEG3Q' },
-      { name: 'AI Essentials', issuer: 'Intel', date: 'Jul 30, 2025', imageUrl: '/assets/certs/intel-ai-essentials.png', verifyUrl: 'https://coursera.org/verify/4RNQ5TI5HC4Y' },
+
+      {
+        name: 'Generative AI with Large Language Models',
+        issuer: 'AWS & DeepLearning.AI',
+        date: 'Aug 22, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/generative_ai_with_large_language_models_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/2SRX3MZ2EAC2'
+      },
+      {
+        name: 'Python for Data Science, AI & Development',
+        issuer: 'IBM',
+        date: 'Aug 21, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/python_for_data_science__ai_&_development_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/BLRPVE4Q019H'
+      },
+      {
+        name: 'AI Foundations: Prompt Engineering with ChatGPT',
+        issuer: 'Arizona State University',
+        date: 'Aug 11, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/ai_foundations_prompt_engineering_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/B5QFU48UJRPD'
+      },
+      {
+        name: 'Artificial Intelligence on Microsoft Azure',
+        issuer: 'Microsoft',
+        date: 'Aug 7, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/artificial_intelligence_on_microsoft_azure_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/6QBSFJ4RZD9P'
+      },
+      {
+        name: 'Introduction to Artificial Intelligent',
+        issuer: 'Capaciti',
+        date: 'Aug 7, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/artificial_intelligence_on_microsoft_azure_coursera.jpg`,
+        verifyUrl: '#'
+      },
+      {
+        name: 'Introduction to Responsible AI',
+        issuer: 'Google Cloud',
+        date: 'Aug 1, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/introduction_to_responsible_ai_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/A36BDVJ507MK'
+      },
+      {
+        name: 'AI For Everyone',
+        issuer: 'DeepLearning.AI',
+        date: 'Jul 31, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/ai_for_everyone_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/2AOOUG9QY4YY'
+      },
+      {
+        name: 'Introduction to Artificial Intelligence (AI)',
+        issuer: 'IBM',
+        date: 'Jul 31, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/introduction_to_artificial_intelligence__ai__coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/W5GIHZV1991C'
+      },
+      {
+        name: 'Introduction to Generative AI',
+        issuer: 'Google Cloud',
+        date: 'Jul 30, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/introduction_to_generative_ai_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/VUY4MQ7JEG3Q'
+      },
+      {
+        name: 'AI Essentials',
+        issuer: 'Intel',
+        date: 'Jul 30, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/ai_essentials_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/4RNQ5TI5HC4Y'
+      },
+      {
+        name: 'Microsoft Certified: Azure AI Fundamentals',
+        issuer: 'Microsoft',
+        date: 'May 29, 2024',
+        imageUrl: `${import.meta.env.BASE_URL}images/artificial_intelligence_on_microsoft_azure_coursera.jpg`,
+        verifyUrl: 'https://learn.microsoft.com/api/achievements/share/en-us/KatlegoMakete/CFFSR8U9?sharingId=B68336AD14220C2C'
+      },
+      {
+        name: 'Trustworthy AI: Managing Bias, Ethics, and Accountability',
+        issuer: 'Johns Hopkins University',
+        date: 'Sep 5, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/artificial_intelligence_on_microsoft_azure_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/KDZB53LMP43J'
+      },
+      {
+        name: 'Building AI Powered Chatbots Without Programming',
+        issuer: 'IBM',
+        date: 'Sep 1, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/artificial_intelligence_on_microsoft_azure_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/993V6D3PJKCX'
+      }
     ]
   },
-   {
+  {
     title: 'Professional Development',
     certifications: [
-      { name: 'Negotiation skills: Negotiate and resolve conflict', issuer: 'Macquarie University', date: 'Sep 9, 2025', imageUrl: '/assets/certs/macquarie-negotiation.png', verifyUrl: 'https://coursera.org/verify/T2RH269Z1XLC' },
-      { name: 'Solving Problems with Creative and Critical Thinking', issuer: 'IBM', date: 'Sep 8, 2025', imageUrl: '/assets/certs/ibm-creative-thinking.png', verifyUrl: 'https://coursera.org/verify/GHMI4RDRASAT' },
-      { name: 'Grit and Growth Mindset', issuer: 'Arizona State University', date: 'Sep 8, 2025', imageUrl: '/assets/certs/asu-grit-growth.png', verifyUrl: 'https://coursera.org/verify/QL702FQM4OZI' },
-      { name: 'Positive Psychology: Resilience Skills', issuer: 'University of Pennsylvania', date: 'Sep 8, 2025', imageUrl: '/assets/certs/penn-positive-psychology.png', verifyUrl: 'https://coursera.org/verify/MUA9UNXE4BFA' },
-      { name: 'Managing Conflicts with Cultural and Emotional Intelligence', issuer: 'University of Maryland', date: 'Sep 5, 2025', imageUrl: '/assets/certs/maryland-managing-conflicts.png', verifyUrl: 'https://coursera.org/verify/LZFJB5ZAMOUX' },
-      { name: 'Psychology of the Self', issuer: 'American Psychological Association', date: 'Sep 4, 2025', imageUrl: '/assets/certs/apa-psychology-self.png', verifyUrl: 'https://coursera.org/verify/L9CYDH3CVRAQ' },
-      { name: 'Financial Planning for Young Adults', issuer: 'University of Illinois', date: 'Aug 21, 2025', imageUrl: '/assets/certs/illinois-financial-planning.png', verifyUrl: 'https://coursera.org/verify/L2PXZPMIVMKG' },
-      { name: 'Emotional Intelligence', issuer: 'Arizona State University', date: 'Aug 11, 2025', imageUrl: '/assets/certs/asu-emotional-intelligence.png', verifyUrl: 'https://coursera.org/verify/7724EA4BPJ85' },
-      { name: 'Leading with Impact: Team Dynamics, Strategy and Ethics', issuer: 'Coursera Instructor Network', date: 'Aug 8, 2025', imageUrl: '/assets/certs/coursera-leading-with-impact.png', verifyUrl: 'https://coursera.org/verify/7WZCQGVYZE1M' },
-      { name: 'Finding Your Professional Voice: Confidence & Impact', issuer: 'University of London', date: 'Aug 7, 2025', imageUrl: '/assets/certs/london-professional-voice.png', verifyUrl: 'https://coursera.org/verify/KM5BXYB81CCJ' },
-      { name: 'Work Smarter, Not Harder: Time Management', issuer: 'University of California, Irvine', date: 'Aug 7, 2025', imageUrl: '/assets/certs/uci-time-management.png', verifyUrl: 'https://coursera.org/verify/ML6SABWDWJT0' },
-      { name: 'Introduction to Personal Branding', issuer: 'University of Virginia', date: 'Aug 7, 2025', imageUrl: '/assets/certs/virginia-personal-branding.png', verifyUrl: 'https://coursera.org/verify/UU1UEDVUSV25' },
-      { name: 'Developing Interpersonal Skills', issuer: 'IBM', date: 'Aug 6, 2025', imageUrl: '/assets/certs/ibm-interpersonal-skills.png', verifyUrl: 'https://coursera.org/verify/3QE549QL6V5M' },
-      { name: 'Verbal Communications and Presentation Skills', issuer: 'Starweaver', date: 'Jul 30, 2025', imageUrl: '/assets/certs/starweaver-verbal-communication.png', verifyUrl: 'https://coursera.org/verify/H4IAVOOTJVNY' },
-      { name: 'Write Professional Emails in English', issuer: 'Georgia Institute of Technology', date: 'Jul 30, 2025', imageUrl: '/assets/certs/georgia-tech-emails.png', verifyUrl: 'https://coursera.org/verify/BUIB78D2SQZ0' },
-      { name: 'Active Listening: Enhancing Communication Skills', issuer: 'Coursera Instructor Network', date: 'Jul 30, 2025', imageUrl: '/assets/certs/coursera-active-listening.png', verifyUrl: 'https://coursera.org/verify/72QQM5IRJROV' },
+     
+      {
+        name: 'Financial Planning for Young Adults',
+        issuer: 'University of Illinois',
+        date: 'Aug 21, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/financial_planning_for_young_adults_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/L2PXZPMIVMKG'
+      },
+      {
+        name: 'Emotional Intelligence',
+        issuer: 'Arizona State University',
+        date: 'Aug 11, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/emotional_intelligence_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/7724EA4BPJ85'
+      },
+      {
+        name: 'Leading with Impact: Team Dynamics, Strategy and Ethics',
+        issuer: 'Coursera Instructor Network',
+        date: 'Aug 8, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/leading_with_impact_team_dynamics__strategy_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/7WZCQGVYZE1M'
+      },
+      {
+        name: 'Finding Your Professional Voice: Confidence & Impact',
+        issuer: 'University of London',
+        date: 'Aug 7, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/finding_your_professional_voice_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/KM5BXYB81CCJ'
+      },
+      {
+        name: 'Work Smarter, Not Harder: Time Management',
+        issuer: 'University of California, Irvine',
+        date: 'Aug 7, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/work_smarter__not_harder_time_management_for_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/ML6SABWDWJT0'
+      },
+      {
+        name: 'Introduction to Personal Branding',
+        issuer: 'University of Virginia',
+        date: 'Aug 7, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/introduction_to_personal_branding_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/UU1UEDVUSV25'
+      },
+      {
+        name: 'Developing Interpersonal Skills',
+        issuer: 'IBM',
+        date: 'Aug 6, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/developing_interpersonal_skills_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/3QE549QL6V5M'
+      },
+      {
+        name: 'Verbal Communications and Presentation Skills',
+        issuer: 'Starweaver',
+        date: 'Jul 30, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/verbal_communications_and_presentation_skills_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/H4IAVOOTJVNY'
+      },
+      {
+        name: 'Write Professional Emails in English',
+        issuer: 'Georgia Institute of Technology',
+        date: 'Jul 30, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/write_professional_emails_in_english_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/BUIB78D2SQZ0'
+      },
+      {
+        name: 'Active Listening: Enhancing Communication Skills',
+        issuer: 'Coursera Instructor Network',
+        date: 'Jul 30, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/active_listening_enhancing_communication_skills_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/72QQM5IRJROV'
+      },
+       {
+        name: 'Negotiation skills: Negotiate and resolve conflict',
+        issuer: 'Macquarie University',
+        date: 'Sep 9, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/artificial_intelligence_on_microsoft_azure_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/T2RH269Z1XLC'
+      },
+      {
+        name: 'Solving Problems with Creative and Critical Thinking',
+        issuer: 'IBM',
+        date: 'Sep 8, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/artificial_intelligence_on_microsoft_azure_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/GHMI4RDRASAT'
+      },
+      {
+        name: 'Grit and Growth Mindset',
+        issuer: 'Arizona State University',
+        date: 'Sep 8, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/artificial_intelligence_on_microsoft_azure_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/QL702FQM4OZI'
+      },
+      {
+        name: 'Positive Psychology: Resilience Skills',
+        issuer: 'University of Pennsylvania',
+        date: 'Sep 8, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/artificial_intelligence_on_microsoft_azure_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/MUA9UNXE4BFA'
+      },
+      {
+        name: 'Managing Conflicts with Cultural and Emotional Intelligence',
+        issuer: 'University of Maryland',
+        date: 'Sep 5, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/artificial_intelligence_on_microsoft_azure_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/LZFJB5ZAMOUX'
+      },
+      {
+        name: 'Psychology of the Self',
+        issuer: 'American Psychological Association',
+        date: 'Sep 4, 2025',
+        imageUrl: `${import.meta.env.BASE_URL}images/artificial_intelligence_on_microsoft_azure_coursera.jpg`,
+        verifyUrl: 'https://coursera.org/verify/L9CYDH3CVRAQ'
+      }
     ]
   }
 ];

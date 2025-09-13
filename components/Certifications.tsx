@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Section from './Section';
 import { CERTIFICATION_CATEGORIES } from '../constants';
 import { motion, Variants, AnimatePresence } from 'framer-motion';
+import type { Certification } from '../types';
+import ImageViewerModal from './ImageViewerModal'; // make sure path is correct
 
 interface CertificationsProps {
   id: string;
@@ -9,26 +11,26 @@ interface CertificationsProps {
 }
 
 const containerVariants: Variants = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 1 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
+      staggerChildren: 0.08,
     },
   },
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, x: -20 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: 'easeOut' } },
-  exit: { opacity: 0, x: -20, transition: { duration: 0.3 } }
+  hidden: { opacity: 0, scale: 0.9, y: 20 },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } },
+  exit: { opacity: 0, scale: 0.9, y: -10, transition: { duration: 0.3 } }
 };
 
-const CERTS_TO_SHOW = 5;
+const CERTS_TO_SHOW = 8;
 
 const Certifications: React.FC<CertificationsProps> = ({ id, title }) => {
   const [expandedCategories, setExpandedCategories] = useState<{ [key: string]: boolean }>({});
+  const [selectedCertificate, setSelectedCertificate] = useState<Certification | null>(null); // added state
 
   const toggleCategory = (categoryTitle: string) => {
     setExpandedCategories(prev => ({
@@ -37,9 +39,13 @@ const Certifications: React.FC<CertificationsProps> = ({ id, title }) => {
     }));
   };
 
+  const handleViewCertificate = (cert: Certification) => {
+    setSelectedCertificate(cert); // open modal
+  };
+
   return (
     <Section id={id} title={title}>
-      <div className="space-y-12">
+      <div className="space-y-16">
         {CERTIFICATION_CATEGORIES.map(category => {
           const isExpanded = expandedCategories[category.title] || false;
           const visibleCerts = isExpanded ? category.certifications : category.certifications.slice(0, CERTS_TO_SHOW);
@@ -48,47 +54,66 @@ const Certifications: React.FC<CertificationsProps> = ({ id, title }) => {
             <motion.div
               key={category.title}
               layout
-              className="bg-zinc-900/50 backdrop-blur-sm border border-white/10 rounded-xl p-8"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="font-bold text-lg mb-6 text-slate-200">{category.title}</h3>
-              <motion.ul 
-                layout
-                className="space-y-4"
+              <h3 className="font-bold text-xl mb-8 text-slate-200">{category.title}</h3>
+              <motion.div
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
               >
-                <AnimatePresence initial={false}>
+                <AnimatePresence>
                   {visibleCerts.map(cert => (
-                    <motion.li 
+                    <motion.div
                       key={cert.name}
-                      layout
+                      layoutId={`cert-card-${cert.name}`}
                       variants={itemVariants}
                       exit="exit"
+                      whileHover={{ y: -8, scale: 1.03 }}
+                      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                      className="relative bg-zinc-900/50 backdrop-blur-sm border border-white/10 rounded-xl flex flex-col group overflow-hidden shadow-lg shadow-black/20"
                     >
-                      <a 
-                        href={cert.verifyUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="flex items-center gap-4 text-slate-300 hover:text-cyan-400 transition-colors duration-300 group"
-                      >
-                        <i className="fas fa-award text-cyan-400 text-xl w-6 text-center"></i>
-                        <span className="font-medium group-hover:underline underline-offset-4 decoration-cyan-400/50">
+                      <button
+                        onClick={() => handleViewCertificate(cert)}
+                        className="absolute inset-0 z-10 cursor-pointer focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-inset rounded-xl"
+                        aria-label={`View certificate for ${cert.name}`}
+                      ></button>
+                      
+                      {cert.imageUrl ? (
+                        <img
+                          src={cert.imageUrl}
+                          alt={`${cert.name} certificate`}
+                          className="w-full aspect-video object-cover border-b border-white/10"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div className="w-full aspect-video bg-black/20 border-b border-white/10 flex items-center justify-center p-4">
+                          <div className="text-center text-slate-500 group-hover:text-cyan-400 transition-colors duration-300">
+                            <i className="fas fa-file-pdf text-4xl"></i>
+                            <p className="text-xs font-mono mt-2">View PDF</p>
+                          </div>
+                        </div>
+                      )}
+                      <div className="p-4 flex flex-col flex-grow">
+                        <h4 className="font-bold text-sm text-slate-200 group-hover:text-cyan-400 transition-colors flex-grow">
                           {cert.name}
-                        </span>
-                        <span className="font-mono text-xs text-slate-500 ml-auto hidden sm:block">{cert.issuer}</span>
-                      </a>
-                    </motion.li>
+                        </h4>
+                        <div className="mt-3 pt-3 border-t border-white/5 flex justify-between items-center text-xs font-mono text-slate-500">
+                          <span>{cert.issuer}</span>
+                          <span>{cert.date}</span>
+                        </div>
+                      </div>
+                    </motion.div>
                   ))}
                 </AnimatePresence>
-              </motion.ul>
+              </motion.div>
 
               {category.certifications.length > CERTS_TO_SHOW && (
-                <div className="mt-8 text-center">
+                <div className="mt-12 text-center">
                   <motion.button
                     onClick={() => toggleCategory(category.title)}
                     className="bg-white/10 hover:bg-white/20 text-slate-200 font-bold py-2 px-6 rounded-md transition-colors flex items-center gap-2 mx-auto"
@@ -104,6 +129,16 @@ const Certifications: React.FC<CertificationsProps> = ({ id, title }) => {
           );
         })}
       </div>
+
+      {/* Render modal here */}
+      <AnimatePresence>
+        {selectedCertificate && (
+          <ImageViewerModal
+            certificate={selectedCertificate}
+            onClose={() => setSelectedCertificate(null)}
+          />
+        )}
+      </AnimatePresence>
     </Section>
   );
 };
