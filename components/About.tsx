@@ -10,11 +10,10 @@ interface AboutProps {
 const About: React.FC<AboutProps> = ({ id, title }) => {
   return (
     <Section id={id} title={title}>
-      <motion.div 
+      <motion.div
         className="bg-zinc-900/50 backdrop-blur-sm border border-white/10 rounded-xl p-8 space-y-6"
         initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true, amount: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
       >
         <p className="text-slate-300 leading-relaxed">
@@ -23,7 +22,7 @@ const About: React.FC<AboutProps> = ({ id, title }) => {
         <p className="text-slate-300 leading-relaxed">
           My most significant practical experience comes from developing a comprehensive web and mobile application for a real-world clinic. This project was a deep dive into the full software development lifecycle—from initial stakeholder meetings and requirements gathering to designing a responsive UI, implementing core features like booking and user authentication, and managing the project with Git and Trello. It solidified my ability to bridge the gap between user needs and technical execution.
         </p>
-         <p className="text-slate-300 leading-relaxed">
+        <p className="text-slate-300 leading-relaxed">
           Beyond my core academic skills, I am deeply fascinated by the potential of Artificial Intelligence. I have proactively pursued this interest through self-study and numerous certifications in Generative AI, Large Language Models, and cloud platforms from industry leaders like Google, AWS, and IBM. This has equipped me not only with theoretical knowledge but also with the practical skills to build and integrate intelligent features into modern applications.
         </p>
         <div className="border-t border-white/10 pt-6">

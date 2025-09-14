@@ -92,10 +92,15 @@ const Modal: React.FC<ModalProps> = ({ project, onClose }) => {
                   ))}
               </div>
 
-               <div className="mt-auto border-t border-white/10 pt-6">
+               <div className="mt-auto border-t border-white/10 pt-6 flex flex-col sm:flex-row gap-4">
                 <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 text-slate-200 font-bold py-2 px-5 rounded-md transition-colors flex items-center gap-2 w-full justify-center">
-                  <i className="fab fa-github"></i> View Source on GitHub
+                  <i className="fab fa-github"></i> View Source
                 </a>
+                {project.liveUrl && (
+                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold py-2 px-5 rounded-md transition-colors flex items-center gap-2 w-full justify-center">
+                    <i className="fas fa-external-link-alt"></i> Live Demo
+                  </a>
+                )}
               </div>
           </div>
         </motion.div>
