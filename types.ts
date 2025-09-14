@@ -52,12 +52,12 @@ export interface Experience {
 }
 
 export interface Certification {
-    name: string;
-    issuer: string;
-    date: string;
-    imageUrl: string;
-    verifyUrl: string;
-    isBadge?: boolean;
+  name: string;
+  issuer: string;
+  date: string;
+  imageUrl: string;
+  verifyUrl: string;
+  certificateUrl?: string; // optional
 }
 
 export interface CertificationCategory {
