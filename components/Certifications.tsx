@@ -58,9 +58,9 @@ const Certifications: React.FC<CertificationsProps> = ({ id, title }) => {
               key={category.title}
               layout
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
+
             >
               <h3 className="font-bold text-xl mb-8 text-slate-200">{category.title}</h3>
               <motion.div
@@ -85,7 +85,7 @@ const Certifications: React.FC<CertificationsProps> = ({ id, title }) => {
                         className="absolute inset-0 z-10 cursor-pointer focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-inset rounded-xl"
                         aria-label={`View certificate for ${cert.name}`}
                       ></button>
-                      
+
                       {cert.imageUrl ? (
                         <img
                           src={cert.imageUrl}
