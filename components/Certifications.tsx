@@ -21,9 +21,9 @@ const containerVariants: Variants = {
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.9, y: 20 },
-  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } },
-  exit: { opacity: 0, scale: 0.9, y: -10, transition: { duration: 0.3 } }
+  hidden: { opacity: 0, x: -20 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: 'easeOut' } },
+  exit: { opacity: 0, x: 20, transition: { duration: 0.3 } }
 };
 
 const CERTS_TO_SHOW = 8;
@@ -55,16 +55,16 @@ const Certifications: React.FC<CertificationsProps> = ({ id, title, onViewCertif
               transition={{ duration: 0.6 }}
             >
               <h3 className="font-bold text-xl mb-8 text-slate-200">{category.title}</h3>
-              <motion.div
+              <motion.ul
                 layout
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                className="space-y-4"
               >
                 <AnimatePresence>
                   {visibleCerts.map(cert => (
-                    <motion.div
+                    <motion.li
                       key={cert.name}
                       onClick={() => {
                         if (cert.imageUrl || cert.certificateUrl) {
@@ -76,38 +76,31 @@ const Certifications: React.FC<CertificationsProps> = ({ id, title, onViewCertif
                       layout
                       variants={itemVariants}
                       exit="exit"
-                      whileHover={{ y: -8, scale: 1.03 }}
-                      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                      className="bg-zinc-900/50 backdrop-blur-sm border border-white/10 rounded-xl flex flex-col group cursor-pointer overflow-hidden shadow-lg shadow-black/20"
+                      whileHover={{ 
+                        backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                        borderColor: 'rgba(0, 189, 212, 0.5)',
+                        y: -3
+                      }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                      className="bg-zinc-900/50 backdrop-blur-sm border border-white/10 rounded-xl p-4 flex justify-between items-center group cursor-pointer shadow-lg shadow-black/20"
                     >
-                      {cert.imageUrl ? (
-                        <img
-                          src={cert.imageUrl}
-                          alt={`${cert.name} certificate`}
-                          className="w-full aspect-video object-cover border-b border-white/10"
-                          loading="lazy"
-                        />
-                      ) : (
-                        <div className="w-full aspect-video bg-black/20 border-b border-white/10 flex items-center justify-center p-4">
-                          <div className="text-center text-slate-500 group-hover:text-cyan-400 transition-colors duration-300">
-                            <i className="fas fa-file-pdf text-4xl"></i>
-                            <p className="text-xs font-mono mt-2">View PDF</p>
-                          </div>
-                        </div>
-                      )}
-                      <div className="p-4 flex flex-col flex-grow">
-                        <h4 className="font-bold text-sm text-slate-200 group-hover:text-cyan-400 transition-colors flex-grow">
+                      <div>
+                        <h4 className="font-bold text-slate-200 group-hover:text-cyan-400 transition-colors">
                           {cert.name}
                         </h4>
-                        <div className="mt-3 pt-3 border-t border-white/5 flex justify-between items-center text-xs font-mono text-slate-500">
+                        <div className="mt-1 text-sm text-slate-500 font-mono">
                           <span>{cert.issuer}</span>
+                          <span className="mx-2">&bull;</span>
                           <span>{cert.date}</span>
                         </div>
                       </div>
-                    </motion.div>
+                      <div className="text-slate-500 group-hover:text-cyan-400 transition-all transform group-hover:scale-110 pl-4">
+                          <i className="fas fa-eye"></i>
+                      </div>
+                    </motion.li>
                   ))}
                 </AnimatePresence>
-              </motion.div>
+              </motion.ul>
 
               {category.certifications.length > CERTS_TO_SHOW && (
                 <div className="mt-12 text-center">
