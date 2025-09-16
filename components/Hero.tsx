@@ -124,8 +124,8 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <p className="font-bold text-lg">Aspiring Software Developer</p>
-            <p className="text-slate-400 text-sm mt-1">at Capaciti</p>
+            <p className="font-bold text-lg">Aspiring Data Analyst</p>
+            <p className="text-slate-400 text-sm mt-1">At Capaciti</p>
           </motion.div>
         </div>
       </div>

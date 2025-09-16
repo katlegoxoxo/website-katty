@@ -76,7 +76,7 @@ export const PROJECTS: Project[] = [
       { title: 'Technical Implementation', icon: 'fas fa-microchip', content: 'This project leverages the Gemini API\'s JSON mode for structured data output. The React frontend sends the user\'s text and receives a clean JSON object containing the sentiment, confidence score, and influential keywords. This data is then fed into D3.js and Chart.js components to render dynamic, animated gauges and charts, providing a rich data visualization experience.' },
       { title: 'Overcoming Challenges', icon: 'fas fa-brain', content: 'A key challenge was handling a wide variety of text lengths and complexities without sacrificing performance. This was addressed by implementing frontend validation and designing the API call to be efficient. It was a great exercise in combining AI-driven data processing with effective frontend data visualization.' }
     ],
-    technologies: ['Gemini API', 'React', 'D3.js', 'Chart.js'],
+    technologies: ['Gemini API', 'HTML & CSS'],
     githubUrl: 'https://github.com/Jozi-Navigators/Sentiment-Analysis-Dashboard.git',
     liveUrl: 'https://jozi-navigators.github.io/Sentiment-Analysis-Dashboard/',
     imageUrl: `${import.meta.env.BASE_URL}images/SentimentAnalysisDashboard.png`,
@@ -92,7 +92,7 @@ export const PROJECTS: Project[] = [
       { title: 'Architecture & Tech', icon: 'fas fa-sitemap', content: 'The application was built using React for the frontend' },
       { title: 'Key Takeaway', icon: 'fas fa-lightbulb', content: 'The biggest challenge was designing a scalable data structure for the Realtime Database to efficiently manage users, chat rooms, and shared resources without performance degradation. This project provided invaluable experience in full-stack development and architecting real-time, collaborative applications.' }
     ],
-    technologies: ['React', 'Firebase', 'Real-time Chat', 'UI/UX'],
+    technologies: ['React', 'Real-time Chat', 'UI/UX'],
     githubUrl: 'https://github.com/katlegoxoxo',
     liveUrl: 'https://lock-in-one.vercel.app/',
     imageUrl: `${import.meta.env.BASE_URL}images/AILearning.png`,
@@ -138,7 +138,7 @@ export const PROJECTS: Project[] = [
       { title: 'Technology', icon: 'fas fa-tools', content: 'The chatbot was built using a leading no-code AI platform (like Dialogflow or a similar service). This allowed for a focus on the logical and UX aspects of chatbot development rather than the backend implementation, providing a clear view of the underlying concepts.' },
       { title: 'Strategic Learning', icon: 'fas fa-brain', content: 'Although a no-code project, it provided critical insights into the architecture of conversational AI. Understanding concepts like intents, entities, and context management is directly transferable to building more complex, code-based chatbots with frameworks like the Gemini API. It was a practical lesson in the importance of design-before-development.' }
     ],
-    technologies: ['No-Code AI', 'Chatbot Design'],
+    technologies: ['No-Code AI',],
     githubUrl: 'https://github.com/katlegoxoxo',
     liveUrl: '#',
     imageUrl: 'https://picsum.photos/seed/chatbot/800/600',
@@ -199,7 +199,7 @@ export const EXPERIENCE: Experience[] = [
 
 export const CERTIFICATION_CATEGORIES: CertificationCategory[] = [
   {
-    title: 'Artificial Intelligence & Cloud',
+    title: 'Artificial Intelligence ',
     certifications: [
       {
         name: 'Generative AI with Large Language Models',
@@ -229,13 +229,7 @@ export const CERTIFICATION_CATEGORIES: CertificationCategory[] = [
         imageUrl: "/images/artificial_intelligence_on_microsoft_azure_coursera.jpg",
         verifyUrl: 'https://coursera.org/verify/6QBSFJ4RZD9P'
       },
-      {
-        name: 'Introduction to Artificial Intelligent',
-        issuer: 'Capaciti',
-        date: 'Aug 7, 2025',
-        imageUrl: "/images/artificial_intelligence_on_microsoft_azure_coursera.jpg",
-        verifyUrl: '#'
-      },
+     
       {
         name: 'Introduction to Responsible AI',
         issuer: 'Google Cloud',

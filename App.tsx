@@ -49,7 +49,7 @@ const App: React.FC = () => {
           <Skills id={NAV_LINKS[3].id} title="Skills & Tools" />
           <Education id={NAV_LINKS[4].id} title="Education" onCertificateSelect={handleViewEducationCertificate} />
           <Experience id={NAV_LINKS[5].id} title="Experience" />
-          <Certifications id={NAV_LINKS[6].id} title="Certifications & Badges" onViewCertificate={handleViewCertification} />
+          <Certifications id={NAV_LINKS[6].id} title="Certifications" onViewCertificate={handleViewCertification} />
           <Contact id={NAV_LINKS[7].id} title="Get In Touch" />
         </main>
         <Footer />
