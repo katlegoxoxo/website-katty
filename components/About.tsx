@@ -19,9 +19,7 @@ const About: React.FC<AboutProps> = ({ id, title }) => {
         <p className="text-slate-300 leading-relaxed">
           As a passionate and detail-oriented Software Developer, I leverage my recent Diploma with Distinction in IT to transform complex problems into elegant, user-centric digital solutions. Currently, as a Digital Associate at Capaciti, I am actively expanding my skill set in AI and Python, applying my foundational knowledge to real-world digital initiatives.
         </p>
-        <p className="text-slate-300 leading-relaxed">
-          My most significant practical experience comes from developing a comprehensive web and mobile application for a real-world clinic. This project was a deep dive into the full software development lifecycle—from initial stakeholder meetings and requirements gathering to designing a responsive UI, implementing core features like booking and user authentication, and managing the project with Git and Trello. It solidified my ability to bridge the gap between user needs and technical execution.
-        </p>
+       
         <p className="text-slate-300 leading-relaxed">
           Beyond my core academic skills, I am deeply fascinated by the potential of Artificial Intelligence. I have proactively pursued this interest through self-study and numerous certifications in Generative AI, Large Language Models, and cloud platforms from industry leaders like Google, AWS, and IBM. This has equipped me not only with theoretical knowledge but also with the practical skills to build and integrate intelligent features into modern applications.
         </p>
