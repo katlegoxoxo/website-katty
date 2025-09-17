@@ -70,9 +70,13 @@ const Hero: React.FC = () => {
               </motion.span>
             ))}
           </motion.h1>
-          <motion.p variants={itemVariants} className="text-lg text-slate-400 max-w-xl mx-auto md:mx-0 mb-8">
-            A passionate software developer focused on creating clean, efficient, and user-friendly digital experiences. I enjoy turning complex problems into simple, beautiful, and intuitive solutions.
+          <motion.p
+            variants={itemVariants}
+            className="text-lg text-slate-400 max-w-xl mx-auto md:mx-0 mb-8"
+          >
+            Aspiring data analyst with a diploma in Software Development and a growing passion for data analytics, especially in working with databases and uncovering insights.
           </motion.p>
+
           <motion.div variants={itemVariants} className="flex flex-wrap justify-center md:justify-start items-center gap-4 mb-4">
             <Magnetic>
               {/* FIX: Replaced import.meta.env.BASE_URL with a static root path "/" to fix TypeScript error and align with existing path conventions. */}

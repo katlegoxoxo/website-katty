@@ -97,21 +97,7 @@ export const PROJECTS: Project[] = [
     liveUrl: 'https://lock-in-one.vercel.app/',
     imageUrl: `${import.meta.env.BASE_URL}images/AILearning.png`,
   },
-  {
-    name: 'Juta Medical & Dental Centre',
-    date: '04/2024',
-    description: 'Website & mobile app (Android) for a clinic. Features: booking forms, contact listing, responsive UI, basic auth, and user-role docs. Implemented with Android Studio & responsive front-end; used Git & Trello for project workflow.',
-    detailedDescription: [
-      { title: 'The Objective', icon: 'fas fa-bullseye', content: 'The clinic required a professional digital presence to better serve its patients. The project\'s scope was twofold: a public-facing, responsive website for information and appointment requests, and a secure native Android app for existing patients to access their records and communicate with the clinic.' },
-      { title: 'Platform Features', icon: 'fas fa-desktop', content: 'The website, built with clean HTML/CSS and JavaScript, prioritizes accessibility and ease of use, ensuring patients can quickly find information or book an appointment. The Android app, developed in Java using Android Studio, provides a more personalized experience with user login, role-based document access (e.g., viewing lab results), and a secure messaging feature.' },
-      { title: 'Development Process', icon: 'fas fa-tasks', content: 'This was a real-world project that demanded strong project management skills. The development lifecycle was managed using Agile principles, with Trello boards for sprint planning and task tracking. Git and GitHub were used for version control, ensuring code integrity and facilitating collaboration.' },
-      { title: 'Valuable Experience', icon: 'fas fa-chart-line', content: 'This project was a crucial learning experience in translating client requirements into functional software. It involved direct communication with stakeholders, iterative feedback loops, and the challenge of developing for two distinct platforms (web and native mobile) simultaneously.' }
-    ],
-    technologies: ['Android Studio', 'HTML/CSS', 'Git', 'UI/UX'],
-    githubUrl: 'https://github.com/katlegoxoxo',
-
-    imageUrl: 'https://picsum.photos/seed/juta/800/600',
-  },
+  
   {
     name: 'Slatt Image Gen AI',
     date: '08/2025',
@@ -140,24 +126,10 @@ export const PROJECTS: Project[] = [
     ],
     technologies: ['No-Code AI',],
     githubUrl: 'https://github.com/katlegoxoxo',
-    liveUrl: '#',
-    imageUrl: 'https://picsum.photos/seed/chatbot/800/600',
+    liveUrl: 'https://schoolhub.ai/en-US/generate/chatbot/view/5ce8eabf-5e18-40e8-81a3-cb929e390017',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQFpPMaII4qHVuxyGeD8I6fgGSmE74xNeZWw&s',
   },
-  {
-    name: 'JoBus-AI',
-    date: '08/2025',
-    description: 'Created an AI-powered JoBus using no-code tools, demonstrating an understanding of conversational AI principles and rapid prototyping.',
-    detailedDescription: [
-      { title: 'The Objective', icon: 'fas fa-bullseye', content: 'This project was undertaken to gain a foundational understanding of conversational AI design principles without the overhead of complex coding. The goal was to prototype a chatbot that could effectively answer common questions about AI, demonstrating an understanding of user intent and conversation flow.' },
-      { title: 'Design Process', icon: 'fas fa-drafting-compass', content: 'The core of the work was in the design phase. This involved mapping out potential user questions (intents), identifying key terms (entities), and scripting a decision tree for the chatbot\'s responses. The focus was on creating a conversation that felt natural and genuinely helpful to a non-technical user.' },
-      { title: 'Technology', icon: 'fas fa-tools', content: 'The chatbot was built using a leading no-code AI platform (like Dialogflow or a similar service). This allowed for a focus on the logical and UX aspects of chatbot development rather than the backend implementation, providing a clear view of the underlying concepts.' },
-      { title: 'Strategic Learning', icon: 'fas fa-brain', content: 'Although a no-code project, it provided critical insights into the architecture of conversational AI. Understanding concepts like intents, entities, and context management is directly transferable to building more complex, code-based chatbots with frameworks like the Gemini API. It was a practical lesson in the importance of design-before-development.' }
-    ],
-    technologies: ['No-Code AI'],
-    githubUrl: 'https://github.com/Jozi-Navigators/JoBus-AI.git',
-    liveUrl: 'https://jozi-navigators.github.io/JoBus-AI/',
-    imageUrl: 'https://picsum.photos/seed/chatbot/800/600',
-  },
+  
 ];
 
 export const SKILL_CATEGORIES: SkillCategory[] = [

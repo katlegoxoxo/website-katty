@@ -2,8 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Section from './Section';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { GoogleGenAI, Chat } from '@google/genai';
-import { PROJECTS, SKILL_CATEGORIES, EDUCATION } from '../constants';
-import Magnetic from './Magnetic';
+import { PROJECTS, SKILL_CATEGORIES, EDUCATION, EXPERIENCE } from '../constants';
 
 interface ContactProps {
   id: string;
@@ -28,48 +27,83 @@ const Contact: React.FC<ContactProps> = ({ id, title }) => {
             try {
                 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
                 
-                // Create a summary of portfolio content for the AI's context
-                const skillsSummary = SKILL_CATEGORIES.map(cat => `${cat.title}: ${cat.skills.map(s => s.name).join(', ')}`).join('. ');
-                const projectsSummary = PROJECTS.map(p => `${p.name} (${p.technologies.join(', ')})`).join('. ');
-                const educationSummary = EDUCATION.map(e => `${e.degree} from ${e.institution}`).join('. ');
+                const skillsSummary = SKILL_CATEGORIES.map(cat => `${cat.title}: ${cat.skills.map(s => `${s.name}`).join(', ')}`).join('; ');
+                const projectsSummary = PROJECTS.map(p => `${p.name}: ${p.description} (Technologies: ${p.technologies.join(', ')})`).join('; ');
+                const experienceSummary = EXPERIENCE.map(e => `${e.role} at ${e.company} (${e.dateRange}): ${e.description.join(' ')}`).join('; ');
 
-                const systemInstruction = `You are a friendly and professional AI assistant for Katlego Makete's personal portfolio website. Your goal is to answer questions about him and encourage recruiters or collaborators to get in touch.
+                const academicRecordSummary = `
+Katlego graduated with a "Diploma in Information Technology in Software Development" WITH DISTINCTION.
+This is a complete list of his modules and final marks:
+
+2022 Results (First Year):
+- Business Information Systems: 85% (Distinction)
+- Introduction to Quantitative Thinking and Techniques: 96% (Distinction)
+- IT Professional Practice: 80% (Distinction)
+- Operating Systems 1A: 81% (Distinction)
+- Programming Logic and Design: 70% (Pass)
+- Programming 1A: 67% (Pass)
+- Programming 1B: 78% (Distinction)
+- Web Development (Introduction): 94% (Distinction)
+
+2023 Results (Second Year):
+- Database (Introduction): 71% (Pass)
+- Database (Intermediate): 78% (Distinction)
+- Human Computer Interaction: 89% (Distinction)
+- IT Project Management: 72% (Pass)
+- Programming 2B: 90% (Distinction)
+- Programming 2A: 85% (Distinction)
+- System Analysis and Design: 83% (Distinction)
+- Web Development (Intermediate): 78% (Distinction)
+
+2024 Results (Final Year):
+- Advanced Databases: 89% (Distinction)
+- Applied Programming: 84% (Distinction)
+- Information Security: 65% (Pass)
+- Open Source Coding (Introduction): 87% (Distinction)
+- Open Source Coding (Intermediate): 88% (Distinction)
+- Software Quality and Testing: 87% (Distinction)
+- Work Integrated Learning 3A: 76% (Distinction)
+- Work Integrated Learning 3B: 85% (Distinction)
+`;
+
+                const systemInstruction = `You are an enthusiastic, positive, and professional AI assistant for Katlego Makete's portfolio. Your goal is to showcase his skills and encourage recruiters to connect. Be helpful, concise, and friendly, always framing Katlego in a positive light.
                 - Your knowledge base is limited to the following information about Katlego:
+                - Full Academic Record: ${academicRecordSummary}. This is your primary source for any questions about his studies, modules, or specific marks.
                 - Skills: ${skillsSummary}.
                 - Projects: ${projectsSummary}.
-                - Education: ${educationSummary}.
-                - Availability: When asked about his availability or start date, explain that Katlego is currently working at Capaciti but is always open to hearing about exciting new opportunities. Encourage the user to share details about the role and to contact Katlego directly to discuss specifics.
-                - Keep your answers concise and helpful.
-                - Do not use any markdown formatting (like **bold** or *italics*). Respond in plain text only.
-                - If asked about something you don't know, politely state that you can only answer questions about Katlego's professional background.
-                - If a user wants to send a message, ask for their name, email, and message, then format it nicely and tell them you've "forwarded it to Katlego".
-                - Start the conversation with a friendly greeting.`;
+                - Experience: ${experienceSummary}.
+                - Answering about SQL: If asked about his SQL or database skills, refer to his academic record. Highlight his excellent marks: "Database (Intermediate)" at 78% and "Advanced Databases" at 89%, both distinctions. This proves a deep, academically-validated understanding of the subject.
+                - Handling Personal Questions: If asked a personal question (e.g., about smoking, relationships, etc.), you must politely decline. Respond with something like: "I can't answer personal questions, but I can tell you that Katlego is known for being a dedicated and focused professional who is passionate about technology and continuous learning." Then, try to guide the conversation back to professional topics.
+                - Availability: When asked about his availability, state that Katlego is currently happily employed at Capaciti but is always open to discussing exciting new opportunities that align with his skills. Encourage them to contact him directly to share details about the role.
+                - Tone and Formatting: Keep your answers concise and helpful. Do not use any markdown formatting (like **bold** or *italics*). Respond in plain text only.
+                - Unknown Topics: If asked about something outside your knowledge base, politely state that you can only answer questions about Katlego's professional background.
+                - Guiding Conversation: After answering a question, suggest one or two related follow-up questions to guide the conversation, like 'Would you like to know more about his final year project?' or 'I can also tell you about his programming marks. Interested?'.`;
 
                 const newChat = ai.chats.create({
                     model: 'gemini-2.5-flash',
-                    config: { systemInstruction },
+                    config: {
+                        systemInstruction: systemInstruction,
+                    },
                 });
-                setChat(newChat);
 
-                // Start with an initial message from the model
-                setChatHistory([{ role: 'model', text: "Hello! I'm Katlego's AI assistant. Feel free to ask me about his skills, projects, or how to get in touch." }]);
+                setChat(newChat);
+                setChatHistory([{ role: 'model', text: "Hello! I'm an AI assistant for Katlego's portfolio. Feel free to ask me anything about his skills, projects, or experience." }]);
             } catch (error) {
-                console.error("Failed to initialize chat:", error);
-                setChatHistory([{ role: 'model', text: "Sorry, I'm having trouble connecting right now. Please use the links below to contact Katlego." }]);
+                console.error("Failed to initialize AI Chat:", error);
+                setChatHistory([{ role: 'model', text: "Sorry, the AI assistant is currently unavailable. Please try again later." }]);
             }
         };
+
         initializeChat();
     }, []);
 
-    // Auto-scroll chat
     useEffect(() => {
         if (chatContainerRef.current) {
             chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
         }
-    }, [chatHistory, isLoading]);
+    }, [chatHistory]);
 
-    const handleSendMessage = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+    const handleSendMessage = async () => {
         if (!userInput.trim() || !chat || isLoading) return;
 
         const userMessage: ChatMessage = { role: 'user', text: userInput };
@@ -79,104 +113,96 @@ const Contact: React.FC<ContactProps> = ({ id, title }) => {
 
         try {
             const response = await chat.sendMessage({ message: userInput });
+            
             const modelMessage: ChatMessage = { role: 'model', text: response.text };
             setChatHistory(prev => [...prev, modelMessage]);
+
         } catch (error) {
-            console.error("Chat API error:", error);
-            const errorMessage: ChatMessage = { role: 'model', text: "I'm sorry, I encountered an error. Please try again or use the links below." };
+            console.error("AI Chat Error:", error);
+            const errorMessage: ChatMessage = { role: 'model', text: "Sorry, I encountered an error. Please try asking in a different way." };
             setChatHistory(prev => [...prev, errorMessage]);
         } finally {
             setIsLoading(false);
         }
     };
     
-    // Animation Variants
-    const containerVariants: Variants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: { staggerChildren: 0.3, delayChildren: 0.2 },
-        },
+    const messageVariants: Variants = {
+        hidden: { opacity: 0, y: 10 },
+        visible: { opacity: 1, y: 0 },
     };
 
-    const itemVariants: Variants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100 } },
-    };
-    
     return (
         <Section id={id} title={title}>
             <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
+                className="bg-zinc-900/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8 flex flex-col"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6 }}
             >
-                <motion.div
-                    variants={itemVariants}
-                    className="bg-zinc-900/50 backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-6"
+                <div className="text-center mb-6">
+                    <h3 className="text-xl font-bold text-slate-100">Chat with my AI Assistant</h3>
+                    <p className="text-slate-400 text-sm mt-1">Ask about my skills, projects, or experience. The AI has been trained on my portfolio data.</p>
+                </div>
+                
+                <div 
+                    ref={chatContainerRef}
+                    className="flex-grow h-80 bg-black/30 rounded-lg p-4 mb-4 overflow-y-auto border border-white/10"
+                    aria-live="polite"
                 >
-                    {/* Chat Window */}
-                    <div ref={chatContainerRef} className="h-80 overflow-y-auto pr-2 space-y-4 mb-4">
-                        <AnimatePresence initial={false}>
-                            {chatHistory.map((msg, index) => (
-                                <motion.div
-                                    key={index}
-                                    layout
-                                    initial={{ opacity: 0, y: 10, scale: 0.9 }}
-                                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                                    transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-                                    className={`flex items-end gap-2 ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
-                                >
-                                    {msg.role === 'model' && <i className="fas fa-robot text-cyan-400 bg-zinc-700 p-2 rounded-full w-8 h-8 flex-shrink-0 text-center"></i>}
-                                    <div className={`max-w-xs md:max-w-md p-3 rounded-lg text-sm ${msg.role === 'user' ? 'bg-cyan-500 text-slate-900' : 'bg-zinc-700 text-slate-200'}`}>
-                                        {msg.text.split('\n').map((line, i) => <p key={i}>{line}</p>)}
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </AnimatePresence>
-                        {isLoading && (
-                            <motion.div 
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                className="flex items-end gap-2 justify-start"
+                    <AnimatePresence>
+                        {chatHistory.map((msg, index) => (
+                            <motion.div
+                                key={index}
+                                layout
+                                variants={messageVariants}
+                                initial="hidden"
+                                animate="visible"
+                                className={`mb-4 flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                             >
-                                <i className="fas fa-robot text-cyan-400 bg-zinc-700 p-2 rounded-full w-8 h-8 flex-shrink-0 text-center"></i>
-                                <div className="bg-zinc-700 p-3 rounded-lg flex items-center gap-1.5">
-                                    <motion.span className="w-2 h-2 bg-zinc-400 rounded-full" animate={{ y: [0, -4, 0], transition: { duration: 1, repeat: Infinity, ease: "easeInOut", delay: 0 }}} />
-                                    <motion.span className="w-2 h-2 bg-zinc-400 rounded-full" animate={{ y: [0, -4, 0], transition: { duration: 1, repeat: Infinity, ease: "easeInOut", delay: 0.15 }}} />
-                                    <motion.span className="w-2 h-2 bg-zinc-400 rounded-full" animate={{ y: [0, -4, 0], transition: { duration: 1, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}} />
+                                <div className={`max-w-[80%] p-3 rounded-xl ${msg.role === 'user' ? 'bg-cyan-500 text-slate-900 rounded-br-none' : 'bg-slate-700 text-slate-200 rounded-bl-none'}`}>
+                                    <p className="text-sm whitespace-pre-wrap">{msg.text}</p>
                                 </div>
                             </motion.div>
-                        )}
-                    </div>
-
-                    {/* Input Form */}
-                    <form onSubmit={handleSendMessage} className="flex items-center gap-2">
-                        <input
-                            type="text"
-                            value={userInput}
-                            onChange={(e) => setUserInput(e.target.value)}
-                            placeholder="Ask a question or type a message..."
-                            aria-label="Chat message"
-                            disabled={!chat}
-                            className="w-full bg-white/5 p-3 rounded-md border border-white/10 focus:ring-2 focus:ring-cyan-400 focus:outline-none transition-shadow disabled:bg-zinc-700/50"
-                        />
-                        <motion.button 
-                            type="submit" 
-                            disabled={isLoading || !chat} 
-                            className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold p-3 rounded-md transition-colors h-full aspect-square disabled:bg-slate-600 disabled:cursor-not-allowed"
-                            whileHover={{ scale: 1.1, rotate: 5 }}
-                            whileTap={{ scale: 0.9, rotate: -5 }}
-                            transition={{ type: 'spring', stiffness: 400, damping: 15 }}
+                        ))}
+                    </AnimatePresence>
+                     {isLoading && (
+                        <motion.div
+                            layout
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            className="flex justify-start"
+                            aria-label="AI is typing"
                         >
-                            <i className="fas fa-paper-plane"></i>
-                        </motion.button>
-                    </form>
-                </motion.div>
-                
-                {/* Direct Contact Links */}
-                
+                            <div className="bg-slate-700 text-slate-200 p-3 rounded-xl rounded-bl-none flex items-center gap-2">
+                                <span className="w-2 h-2 bg-slate-400 rounded-full animate-pulse delay-0"></span>
+                                <span className="w-2 h-2 bg-slate-400 rounded-full animate-pulse delay-150"></span>
+                                <span className="w-2 h-2 bg-slate-400 rounded-full animate-pulse delay-300"></span>
+                            </div>
+                        </motion.div>
+                    )}
+                </div>
+
+                <div className="flex gap-2">
+                    <input
+                        type="text"
+                        value={userInput}
+                        onChange={(e) => setUserInput(e.target.value)}
+                        onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+                        placeholder="e.g., 'Tell me about his SQL skills'"
+                        className="flex-grow w-full bg-white/5 p-3 rounded-md border border-white/10 focus:ring-2 focus:ring-cyan-400 focus:outline-none transition-shadow"
+                        disabled={!chat}
+                        aria-label="Chat input"
+                    />
+                    <button
+                        onClick={handleSendMessage}
+                        disabled={!chat || isLoading || !userInput.trim()}
+                        className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold p-3 rounded-md transition-colors flex items-center justify-center gap-2 disabled:bg-slate-600 disabled:cursor-not-allowed w-14"
+                        aria-label="Send message"
+                    >
+                        <i className="fas fa-paper-plane"></i>
+                    </button>
+                </div>
             </motion.div>
         </Section>
     );
