@@ -24,20 +24,7 @@ const Footer: React.FC = () => {
           <i className="fas fa-arrow-up transform group-hover:-translate-y-0.5 transition-transform"></i>
         </button>
 
-        <div className="flex justify-center items-center gap-6 text-slate-400 text-2xl">
-            <Magnetic>
-                <a href="https://www.linkedin.com/in/katlego-shaun-makete-72225a250/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors block p-2" title="LinkedIn"><i className="fab fa-linkedin"></i></a>
-            </Magnetic>
-            <Magnetic>
-                <a href="https://github.com/katlegoxoxo" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors block p-2" title="GitHub"><i className="fab fa-github"></i></a>
-            </Magnetic>
-            <Magnetic>
-                <a href="mailto:katlegomakete18@gmail.com" className="hover:text-cyan-400 transition-colors block p-2" title="Email"><i className="fas fa-envelope"></i></a>
-            </Magnetic>
-            <Magnetic>
-                <a href="tel:+27695126439" className="hover:text-cyan-400 transition-colors block p-2" title="Phone"><i className="fas fa-phone"></i></a>
-            </Magnetic>
-        </div>
+        
 
         <p className="font-mono text-sm text-cyan-400/80 italic">
           "Stay learning, stay building, stay relentless"

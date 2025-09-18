@@ -3,6 +3,7 @@ import Section from './Section';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { GoogleGenAI, Chat } from '@google/genai';
 import { PROJECTS, SKILL_CATEGORIES, EDUCATION, EXPERIENCE } from '../constants';
+import Magnetic from './Magnetic';
 
 interface ContactProps {
   id: string;
@@ -202,6 +203,23 @@ This is a complete list of his modules and final marks:
                     >
                         <i className="fas fa-paper-plane"></i>
                     </button>
+                </div>
+                 <div className="text-center mt-12 pt-8 border-t border-white/10">
+                    <p className="text-slate-400 mb-4">Or, reach out directly:</p>
+                    <div className="flex justify-center items-center gap-6 text-slate-400 text-2xl">
+                        <Magnetic>
+                            <a href="https://www.linkedin.com/in/katlego-shaun-makete-72225a250/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors block p-2" title="LinkedIn"><i className="fab fa-linkedin"></i></a>
+                        </Magnetic>
+                         <Magnetic>
+                            <a href="https://github.com/katlegoxoxo" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors block p-2" title="GitHub"><i className="fab fa-github"></i></a>
+                        </Magnetic>
+                        <Magnetic>
+                            <a href="mailto:katlegomakete18@gmail.com" className="hover:text-cyan-400 transition-colors block p-2" title="Email"><i className="fas fa-envelope"></i></a>
+                        </Magnetic>
+                        <Magnetic>
+                            <a href="tel:+27695126439" className="hover:text-cyan-400 transition-colors block p-2" title="Phone"><i className="fas fa-phone"></i></a>
+                        </Magnetic>
+                    </div>
                 </div>
             </motion.div>
         </Section>
