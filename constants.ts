@@ -134,17 +134,7 @@ export const PROJECTS: Project[] = [
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
 
-  {
-    title: 'Tools & Cloud',
-    skills: [
-      { name: 'Git & GitHub', icon: 'fab fa-github', description: 'Experienced in using Git for version control and GitHub for collaborative development. Proficient with core concepts like branching, merging, pull requests, and resolving conflicts.' },
-      { name: 'Android Studio', icon: 'fab fa-android', description: 'Used Android Studio to develop a native Android application for a real-world clinic. Handled UI design with XML, implemented core logic in Java, and managed the project build process.' },
-      { name: 'VS Code', icon: 'fas fa-code', description: 'My primary code editor for web development and scripting. Proficient in using its integrated debugger, terminal, and a wide range of extensions to boost productivity.' },
-      { name: 'Power BI (basic)', icon: 'fas fa-chart-line', description: 'Familiar with Power BI for creating simple dashboards and visualizing data. Able to connect data sources and generate basic reports to extract insights.' },
-      { name: 'Google Cloud & AI', icon: 'fab fa-google', description: 'Completed introductory courses on Google Cloud\'s core infrastructure and Generative AI services. Eager to apply this knowledge to build and deploy intelligent applications.' },
-      { name: 'Trello', icon: 'fab fa-trello', description: 'Used Trello for agile project management, organizing tasks, tracking progress, and collaborating with team members in a Kanban-style workflow.' },
-    ],
-  },
+ 
 ];
 
 export const EDUCATION: EducationItem[] = [

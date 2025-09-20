@@ -46,7 +46,7 @@ const App: React.FC = () => {
           <Hero />
           <About id={NAV_LINKS[1].id} title="About" />
           <Projects id={NAV_LINKS[2].id} title="Projects" onProjectSelect={setSelectedProject} />
-          <Skills id={NAV_LINKS[3].id} title="Skills & Tools" />
+          <Skills id={NAV_LINKS[3].id} title="Skills " />
           <Education id={NAV_LINKS[4].id} title="Education" onCertificateSelect={handleViewEducationCertificate} />
           <Experience id={NAV_LINKS[5].id} title="Experience" />
           <Certifications id={NAV_LINKS[6].id} title="Certifications" onViewCertificate={handleViewCertification} />
